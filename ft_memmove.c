@@ -6,12 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 18:13:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/22 00:51:23 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 00:08:41 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <strings.h>
+#include <libft.h>
 
 void	*ft_memmove(void *s1, const void *s2, size_t n)
 {

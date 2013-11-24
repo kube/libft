@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 20:41:46 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/22 15:04:21 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 00:07:36 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
+#include <libft.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

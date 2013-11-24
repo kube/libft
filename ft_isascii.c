@@ -6,11 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 00:38:14 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/23 00:50:08 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 00:05:25 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isascii(int c)
+#include <libft.h>
+
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 	{

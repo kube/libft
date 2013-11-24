@@ -6,11 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 00:51:39 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/23 01:05:31 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 01:38:05 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	tolower(int c)
+#include <unistd.h>
+
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{

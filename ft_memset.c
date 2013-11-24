@@ -6,14 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 18:44:18 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/20 15:39:11 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 00:09:05 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <libft.h>
 
-void	*ft_memset (void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned int	i;
 	unsigned char	*cache;

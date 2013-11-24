@@ -6,12 +6,15 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 08:26:32 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/23 08:31:58 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 02:55:53 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp()
+#include <libft.h>
+
+int	ft_strcmp(const char *s1, const char *s2)
 {
-
-
+	(void)s1;
+	(void)s2;
+	return (0);
 }

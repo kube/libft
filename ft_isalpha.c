@@ -6,11 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 23:39:54 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/22 23:59:54 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 00:04:52 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalpha(int c)
+#include <libft.h>
+
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{

@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memcmp.c                                           :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 20:48:59 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/24 00:07:52 by cfeijoo          ###   ########.fr       */
+/*   Created: 2013/11/24 04:40:04 by cfeijoo           #+#    #+#             */
+/*   Updated: 2013/11/24 04:41:56 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			i;
-	const char		*c1;
-	const char		*c2;
-
-	i = 0;
-	c1 = s1;
-	c2 = s2;
-	while (i < n)
-	{
-		if (c1[i] != c2[i])
-		{
-			return (c1[i] - c2[i]);
-		}
-		i++;
-	}
-	return (0);
+	(void)s2;
+	return ((char*)s1);
 }

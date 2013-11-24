@@ -6,34 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 02:16:29 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/23 05:06:35 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/23 23:53:41 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	ft_isspace(char	c)
-{
-	if (c == ' ' ||
-		c == '\n' ||
-		c == '\t' ||
-		c == '\v' ||
-		c == '\f' ||
-		c == '\r')
-	{
-		return (1);
-	}
-	return (0);
-}
-
-int	ft_isdigit(char c)
-{
-	if (c >= '0' && c <= '9')
-	{
-		return (1);	
-	}
-	return (0);
-}
+#include <libft.h>
 
 int	ft_atoi(const char *str)
 {

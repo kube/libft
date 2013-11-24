@@ -6,20 +6,22 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 08:23:18 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/23 08:24:41 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 03:06:55 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char *s, int c)
-{
-	int	i;
+#include <libft.h>
 
-	i = ft_strlen(s);
+char	*ft_strrchr(const char *s, int c)
+{
+	unsigned int	i;
+
+	i = ft_strlen((char*)s);
 	while (*s)
 	{
 		if (*s == c)
 		{
-			return (s);
+			return ((char*)s);
 		}
 		s--;
 	}

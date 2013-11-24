@@ -6,11 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 01:05:52 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/23 01:16:35 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 01:39:46 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	toupper(int c)
+#include <libft.h>
+
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{

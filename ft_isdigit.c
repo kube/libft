@@ -6,11 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 23:56:07 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/23 00:00:02 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 00:05:59 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isdigit(int c)
+#include <libft.h>
+
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 	{

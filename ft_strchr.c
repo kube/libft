@@ -6,11 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 08:16:45 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/23 08:22:58 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 02:55:20 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *s, int c)
+#include <libft.h>
+
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -19,7 +21,7 @@ char	*strchr(const char *s, int c)
 	{
 		if (*s == c)
 		{
-			return (s);
+			return ((char*)s);
 		}
 		s++;
 	}

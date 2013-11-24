@@ -6,11 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 00:07:33 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/23 00:16:55 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 00:06:22 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isprint(int c)
+#include <libft.h>
+
+int	ft_isprint(int c)
 {
 	if (c >= ' ' && c <= '~')
 	{

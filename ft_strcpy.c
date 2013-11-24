@@ -6,19 +6,21 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 02:02:58 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/23 05:43:33 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 02:57:26 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strcpy(char *s1, const char *s2)
+#include <libft.h>
+
+char	*ft_strcpy(char *s1, const char *s2)
 {
-	int	i;
-	int	len1;
-	int	len2;
+	unsigned int	i;
+	size_t			len1;
+	size_t			len2;
 
 	i = 0;
 	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
+	len2 = ft_strlen((char*)s2);
 	while (s2[i] && i < len2)
 	{
 		s1[i] = s2[i];
