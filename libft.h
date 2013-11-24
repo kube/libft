@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 22:05:41 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/24 05:18:16 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/24 17:53:53 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strchr(const char *s, int c);
 int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strcpy(char *s1, const char *s2);
 char	*ft_strdup(const char *s1);
-size_t	ft_strlen (char *str1);
+size_t	ft_strlen (const char *s);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
 char	*ft_strncpy(char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
