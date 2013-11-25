@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 08:23:18 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/24 03:06:55 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/25 08:47:53 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned int	i;
+	int i;
 
 	i = ft_strlen((char*)s);
-	while (*s)
+	while (i >= 0)
 	{
-		if (*s == c)
+		if (s[i] == (char)c)
 		{
-			return ((char*)s);
+			return ((char*)(s + i));
 		}
-		s--;
+		i--;
 	}
 	return (NULL);
 }
