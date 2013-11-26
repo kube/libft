@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:09:58 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/25 21:33:37 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/27 00:42:26 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strstr(const char *s1, const char *s2)
 {
-	int		begin;
-	int		current;
+	size_t		begin;
+	size_t		current;
 
 	begin = 0;
 	while (s1[begin])

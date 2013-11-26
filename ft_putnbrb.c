@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbrb.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 02:46:45 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/26 17:06:02 by cfeijoo          ###   ########.fr       */
+/*   Created: 2013/11/26 17:03:35 by cfeijoo           #+#    #+#             */
+/*   Updated: 2013/11/26 17:32:50 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_putnbr(int n)
+void	ft_putnbrb(long int n, unsigned int base)
 {
-	char	a;
+	int		a;
+	char	b[36] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-	if (n < 0)
+	if (base <= 36 && base > 1)
 	{
-		write(1, "-", 1);
+		if (n < 0)
+		{
+			write(1, "-", 1);
+		}
+		if (n / base)
+		{
+			ft_putnbr(ft_abs(n / base));
+		}
+		a = ft_abs(n % base);
+		write(1, b + a, 1);
 	}
-	if (n / 10)
-	{
-		ft_putnbr(ft_abs(n / 10));
-	}
-	a = '0' + ft_abs(n % 10);
-	write(1, &a, 1);
 }

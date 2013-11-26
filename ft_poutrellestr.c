@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_poutrellestr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 02:46:45 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/26 17:06:02 by cfeijoo          ###   ########.fr       */
+/*   Created: 2013/11/26 16:47:31 by cfeijoo           #+#    #+#             */
+/*   Updated: 2013/11/26 17:29:18 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_putnbr(int n)
+void	ft_poutrellestr(void *ptr, size_t size, int base)
 {
-	char	a;
+	size_t	i;
+	char	*p;
 
-	if (n < 0)
+	i = 0;
+	p = (char*)ptr;
+	while (i < size)
 	{
-		write(1, "-", 1);
+		ft_putnbrb(p[i], base);
+		write(1, " ", 1);
+		i++;
 	}
-	if (n / 10)
-	{
-		ft_putnbr(ft_abs(n / 10));
-	}
-	a = '0' + ft_abs(n % 10);
-	write(1, &a, 1);
 }

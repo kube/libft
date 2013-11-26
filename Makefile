@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2013/11/24 18:11:00 by cfeijoo          ###   ########.fr        #
+#    Updated: 2013/11/26 17:28:43 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,12 +67,15 @@ SRC	= ft_isprint.c		\
 	ft_memmove.c		\
 	ft_strcat.c			\
 	ft_strjoin.c		\
-	ft_strnstr.c
+	ft_strnstr.c		\
+						\
+	ft_poutrellestr.c	\
+	ft_putnbrb.c		\
 
 
 OSRC = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -pedantic -O3
 
 CC = /usr/bin/gcc
 AR = /usr/bin/ar
