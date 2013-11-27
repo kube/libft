@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:44:28 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/24 05:12:38 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/27 02:37:21 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ char	**ft_strsplit(char const *s, char c)
 	char	**a;
 
 	(void)c;
-	*a = (char*)s;
+	a = &(char*)s;
 	return (a);
 }
