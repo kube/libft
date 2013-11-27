@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:40:04 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/24 04:41:56 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/27 21:16:51 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	(void)s2;
-	return ((char*)s1);
+	unsigned int	length;
+	char			*new;
+
+	length = ft_strlen(s1) + ft_strlen(s2);
+	new = (char*)malloc(length * sizeof(*new));
+
+	ft_strcpy(new, s1);
+	ft_strcpy(new + ft_strlen(s1), s2);
+	return ((char*)new);
 }
