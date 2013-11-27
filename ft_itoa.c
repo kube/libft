@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:46:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 05:58:05 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/27 06:57:18 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static int	ft_getpower(int n, unsigned int base)
 	unsigned int	power;
 
 	power = 0;
+	n = ft_abs(n);
 	while (n)
 	{
 		n = n / base;
@@ -25,35 +26,31 @@ static int	ft_getpower(int n, unsigned int base)
 	return (power);
 }
 
-static char	*ft_fillnbr(int n, char *str)
+static void	ft_fillnbr(int n, char *str)
 {
-	char	*a;
-
 	if (n / 10)
 	{
-		a = ft_fillnbr(n / 10, str + 1);
+		ft_fillnbr(n / 10, str - 1);
 	}
-	*a = '0' + n % 10;
-	return (str);
+	*str = '0' + n % 10;
 }
 
 char		*ft_itoa(int n)
 {
-	char			*a;
 	char			*str;
 	unsigned int	length;
 
-	length = 0;
-	length = ft_getpower(n, 10);
-	if (n < 0)
+	if (n == 0)
 	{
-		length++;
+		return ("0");
 	}
+	length = ft_getpower(n, 10) + (n < 0);
 	str = (char*)malloc(length * sizeof(*str));
 	if (n < 0)
 	{
 		str[0] = '-';
 	}
-	a = ft_fillnbr(ft_abs(n), str + 1);
+	ft_fillnbr(ft_abs(n), str + length - 1);
+	str[length] = 0;
 	return (str);
 }
