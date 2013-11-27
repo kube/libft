@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:44:28 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 04:26:44 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/27 05:58:10 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static int	ft_getwordsnb(char const *s, char c)
 	size_t			i;
 
 	i = 0;
+	nb = 0;
 	while (s[i])
 	{
 		while ((char)s[i] == c)
