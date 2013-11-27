@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:14:37 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 17:04:36 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/27 18:05:42 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
  *        begin++;
  *    }
  */
+
 	(void)s1;
 	(void)s2;
 	(void)n;
