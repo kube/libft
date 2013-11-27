@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:20:16 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/25 20:19:57 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/27 20:10:59 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	ft_putstr("strncmp ");
 	i = 0;
 	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n)
 	{

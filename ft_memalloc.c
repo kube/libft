@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 03:56:30 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/24 03:58:06 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/27 19:49:03 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	*ft_memalloc(size_t size)
 {
+	ft_putstr("memalloc ");
 	(void)size;
 	return (0);
 }

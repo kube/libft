@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 14:31:22 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/24 00:04:02 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/27 19:46:04 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	ft_putstr("bzero ");
 	ft_memset(s, 0, n);
 }
