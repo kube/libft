@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:09:58 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 23:13:37 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 00:39:15 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,22 @@ char	*ft_strstr(const char *s1, const char *s2)
 
 	ft_putstr("strstr ");
 	begin = 0;
-	current = 0;
 	if (*s2 == 0)
 	{
-		return ((char *)s1);
+		return ((char*)s1);
 	}
-	while (s1[begin])
+	while (s1[begin] && ft_strlen(s1) - begin >= ft_strlen(s2))
 	{
-		if ((s2[current] == s1[begin + current]))
+		current = 0;
+		while (s2[current] == s1[begin + current])
 		{
 			current++;
 		}
-		else
-		{
-			current = 0;
-			begin++;
-		}
 		if (!s2[current])
 		{
-			return ((char *)s1 + begin);
+			return ((char*)(s1 + begin));
 		}
+		begin++;
 	}
 	return (NULL);
 }
