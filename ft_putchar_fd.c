@@ -6,14 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:51:35 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/24 05:00:20 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/27 02:12:32 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_putchar_fd(char const *s, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	(void)fd;
-	(void)s;
+	write(fd, &c, 1);	
 }
