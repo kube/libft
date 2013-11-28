@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:14:37 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/28 00:41:16 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 03:24:58 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,28 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	size_t	begin;
 	size_t	current;
 
-	ft_putstr("strnstrA ");
+	ft_putstr("strnstr ");
 	begin = 0;
+	current = 0;
 	if (*s2 == 0)
 	{
-		return ((char*)s1);
+		return ((char *)s1);
 	}
-	while (s1[begin] && ft_strlen(s1) - begin >= ft_strlen(s2))
+	while (s1[begin] && n > begin)
 	{
-		current = 0;
-		while (s2[current]
-				&& current < n
-				&& s2[current] == s1[begin + current])
+		if (s1[begin + current] == s2[current] && begin + current < n)
 		{
 			current++;
 		}
+		else
+		{
+			current = 0;
+			begin++;
+		}
 		if (!s2[current])
 		{
-			return ((char*)(s1 + begin));
+			return ((char *)s1 + begin);
 		}
-		begin++;
 	}
 	return (NULL);
 }
