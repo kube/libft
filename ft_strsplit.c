@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:44:28 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 06:00:47 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 17:56:19 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,42 +22,41 @@ static int	ft_getwordsnb(char const *s, char c)
 	while (s[i])
 	{
 		while ((char)s[i] == c)
-		{
 			i++;
-		}
-		nb++;
+		if(s[i] && (char)s[i] != c)
+			nb++;
 		while(s[i] && (char)s[i] != c)
-		{
 			i++;
-		}
 	}
-	return (nb - 1);
+	return (nb);
 }
 
 char		**ft_strsplit(char const *s, char c)
 {
-	char			**a;
+	char			**splited;
 	char			*t;
 	size_t			i;
 	unsigned int	k;
 	
 	i = 0;
 	k = 0;
-	a = (char**)malloc(ft_getwordsnb(s, c) * sizeof(char*));
+	splited = (char**)malloc((ft_getwordsnb(s, c) + 1) * sizeof(char*));
 	t = ft_strdup(s);
 	while (t[i])
 	{
-		while ((char)s[i] == c)
+		while ((char)t[i] == c)
 		{
 			t[i] = 0;
 			i++;
 		}
-		a[k] = (char*)(t + i);
-		k++;
-		while(t[i] && (char)t[i] != c)
+		if (t[i] && (char)t[i] != c)
 		{
-			i++;
+			splited[k] = (char*)(t + i);
+			k++;
 		}
+		while(t[i] && (char)t[i] != c)
+			i++;
 	}
-	return (a);
+	splited[k] = 0;
+	return (splited);
 }
