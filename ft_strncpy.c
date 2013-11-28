@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 02:15:04 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 20:11:26 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 04:41:53 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_strncpy(char *s1, const char *s2, size_t n)
 	size_t			len1;
 	size_t	len2;
 
-	ft_putstr("strncpy ");
 	i = 0;
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen((char*)s2);

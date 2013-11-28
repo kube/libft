@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 15:49:52 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 19:49:24 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 04:33:50 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 	char			*c1;
 	const char		*c2;
 
-	ft_putstr("memccpy ");
 	i = 0;
 	c1 = s1;
 	c2 = s2;

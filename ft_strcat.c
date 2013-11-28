@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 08:07:49 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 19:52:01 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 04:35:12 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strcat(char *s1, const char *s2)
 	size_t	i;
 	size_t	len1;
 
-	ft_putstr("strcat ");
 	len1 = ft_strlen(s1);
 	i = 0;
 	while (s2[i])

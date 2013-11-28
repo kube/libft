@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 18:13:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 19:50:58 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 04:34:24 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	char			*c1;
 	const char		*c2;
 
-	ft_putstr("memmove ");
 	i = 0;
 	sens = 1;
 	c1 = s1;

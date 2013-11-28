@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 08:23:18 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 20:24:22 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 04:42:12 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int i;
 
-	ft_putstr("strrchr ");
 	i = ft_strlen((char*)s);
 	while (i >= 0)
 	{

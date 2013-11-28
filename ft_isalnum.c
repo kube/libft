@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 00:04:52 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 19:46:31 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 03:27:16 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_isalnum(int c)
 {
-	ft_putstr("isalnum ");
 	if (ft_isalpha(c) || ft_isdigit(c))
 	{
 		return (1);

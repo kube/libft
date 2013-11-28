@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:46:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 19:48:25 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 03:28:06 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ char		*ft_itoa(int n)
 	char			*str;
 	unsigned int	length;
 
-	ft_putstr("itoa ");
 	if (n == 0)
 	{
 		return ("0");

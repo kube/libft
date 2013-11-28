@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 01:39:06 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 19:54:17 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 04:39:51 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strdup(const char *s1)
 	int		i;
 	char	*s2;
 
-	ft_putstr("strdup ");
 	i = 0;
 	s2 = (char*)malloc(ft_strlen((char*)s1) * sizeof(*s1));
 	if (s2)

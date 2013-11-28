@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 02:16:29 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/27 20:27:53 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 03:26:59 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	ft_atoi(const char *str)
 	int	sign;
 	int	nb;
 
-	ft_putstr("atoi ");
 	i = 0;
 	nb = 0;
 	sign = 1;

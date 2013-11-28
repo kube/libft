@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:09:58 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/28 00:39:15 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/28 04:44:01 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	*ft_strstr(const char *s1, const char *s2)
 	size_t	begin;
 	size_t	current;
 
-	ft_putstr("strstr ");
 	begin = 0;
 	if (*s2 == 0)
 	{

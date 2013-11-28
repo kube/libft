@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2013/11/26 17:28:43 by cfeijoo          ###   ########.fr        #
+#    Updated: 2013/11/28 03:43:08 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ SRC	= ft_isprint.c		\
 
 OSRC = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Wextra -Werror -pedantic -O3
+CFLAGS = -Wall -Wextra -Werror
 
 CC = /usr/bin/gcc
 AR = /usr/bin/ar
