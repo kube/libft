@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 03:56:30 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/28 04:15:59 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/29 14:38:32 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memalloc(size_t size)
 {
 	void	*new;
 
-	new = malloc(size);
+	new = malloc(size * sizeof(char));
 	if (new)
 	{
 		/*ft_bzero(new, size);*/
