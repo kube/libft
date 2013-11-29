@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:22:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/24 04:24:39 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/29 12:52:46 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	(void)s;
-	(void)f;
+	unsigned int	i;
+
+	i = 0;
+	if (s && *f)
+	{
+		while (s[i])
+		{
+			(*f)(i, s + i);
+			i++;
+		}
+	}
 }

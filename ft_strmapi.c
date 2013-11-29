@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:30:09 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/24 04:31:58 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/29 13:24:36 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	(void)f;
-	return ((char*)s);
+	char	*newstr;
+
+	if (s && *f)
+	{
+		newstr = ft_strdup(s);
+		ft_striteri((char*)s, (void(*)(unsigned int, char*))f);
+	}
+	return (NULL);
 }
