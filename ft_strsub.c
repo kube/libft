@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:37:52 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/28 04:44:20 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/29 14:02:13 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,13 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	(void)start;
-	(void)len;
-	return ((char*)s);
+	char	*newstr;
+
+	if (s && len && start + len <= ft_strlen(s))
+	{
+		newstr = ft_strnew(len);
+		if (newstr)
+			return (ft_strncpy(newstr, s + start, len));
+	}
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:07:01 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/29 11:27:38 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/29 13:59:32 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_strnew(size_t size)
 
 	if (size)
 	{
-		newstr = (char*)malloc(size);
+		newstr = (char*)malloc((size + 1) * sizeof(char));
 		if (newstr)
 		{
-			ft_bzero(newstr, size);
+			ft_bzero(newstr, size + 1);
 			return (newstr);
 		}
 	}
