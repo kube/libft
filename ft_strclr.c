@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:18:02 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/24 04:22:28 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/29 11:46:00 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_strclr(char *s)
 {
-	(void)s;
+	if (s)
+	{
+		ft_bzero(s, ft_strlen(s));
+	}
 }
