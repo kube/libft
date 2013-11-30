@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2013/11/29 13:37:02 by cfeijoo          ###   ########.fr        #
+#    Updated: 2013/11/30 23:47:15 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ SRC	= ft_isprint.c		\
 	ft_strchr.c			\
 	ft_strlcat.c		\
 	ft_strrchr.c		\
-	ft_isspace.c		\
 	ft_putchar.c		\
 	ft_strclr.c			\
 	ft_strlen.c			\

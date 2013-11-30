@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:05:17 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/28 04:40:10 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/30 21:51:02 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	char	*d;
 	char	*s;
-	char	**str;
 	size_t	n;
 	size_t	dst_len;
 
 	d = dst;
-	str = &d;
 	s = (char *) src;
 	n = size;
 	while (n != 0 && *d != '\0')
