@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/01 16:32:44 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/01 20:38:08 by cfeijoo          ###   ########.fr       */
+/*   Created: 2013/12/01 15:37:23 by cfeijoo           #+#    #+#             */
+/*   Updated: 2013/12/01 15:52:13 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	*ft_memdup(const void *oldmem, size_t size)
 {
-	if (alst && *del)
+	void	*newmem;
+
+	if (oldmem)
 	{
-		(*del)((*alst)->content, (*alst)->content_size);
-		free(*alst);
+		newmem = malloc(size);
+		if (newmem)
+			ft_memmove(newmem, oldmem, size);
+		return (newmem);
 	}
-	*alst = NULL;
+	return (NULL);
 }

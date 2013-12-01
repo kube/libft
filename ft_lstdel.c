@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 16:27:46 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/01 16:31:59 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/01 20:59:51 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,17 @@
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	(void)alst;
-	(void)*del;
+	t_list	*current;
+
+	if (alst && *del)
+	{
+		current = *alst;
+		while (current)
+		{
+			(*del)(current->content, current->content_size);
+			free(current);
+			current = current->next;
+		}
+	}
+	*alst = NULL;
 }
