@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2013/12/01 14:53:44 by cfeijoo          ###   ########.fr        #
+#    Updated: 2013/12/01 16:26:48 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,8 +67,17 @@ SRC	= ft_isprint.c		\
 	ft_strjoin.c		\
 	ft_strnstr.c		\
 						\
+	ft_lstnew.c			\
+	ft_lstdel.c			\
+	ft_lstdelone.c		\
+	ft_lstadd.c			\
+	ft_lstiter.c		\
+	ft_lstmap.c			\
+						\
 	ft_poutrellestr.c	\
 	ft_putnbrb.c		\
+	ft_memdup.c			\
+	ft_putlnbr.c		\
 
 
 OSRC = $(SRC:.c=.o)

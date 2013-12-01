@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/26 17:03:35 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/01 15:13:38 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/01 15:15:52 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,9 @@ void	ft_putnbrb(long int n, unsigned int base)
 	if (base <= 36 && base > 1)
 	{
 		if (n < 0)
-		{
 			write(1, "-", 1);
-		}
 		if (n / base)
-		{
 			ft_putnbrb(ft_abs(n / base), base);
-		}
 		a = ft_abs(n % base);
 		write(1, b + a, 1);
 	}

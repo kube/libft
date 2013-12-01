@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 18:13:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/01 15:45:43 by cfeijoo          ###   ########.fr       */
+/*   Created: 2013/12/01 15:18:08 by cfeijoo           #+#    #+#             */
+/*   Updated: 2013/12/01 16:13:28 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memmove(void *s1, const void *s2, size_t n)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t			i;
-	int				sens;
-	char			*c1;
-	const char		*c2;
+	t_list	*newlst;
 
-	if (s1 && s2)
-	{
-		i = 0;
-		sens = 1;
-		c1 = s1;
-		c2 = s2;
-		if (s1 >= s2 && n > 0)
-		{
-			i = n - 1;
-			sens = -1;
-		}
-		while (i != n * sens)
-		{
-			c1[i] = c2[i];
-			i += sens;
-		}
-	}
-	return (s1);
+	newlst = (t_list*)malloc(sizeof(t_list));
+	newlst->content = ft_memdup(content, content_size);
+	newlst->content_size = content_size;
+	newlst->next = NULL;
+	return (newlst);
 }

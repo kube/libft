@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 18:13:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/01 15:45:43 by cfeijoo          ###   ########.fr       */
+/*   Created: 2013/12/01 16:27:46 by cfeijoo           #+#    #+#             */
+/*   Updated: 2013/12/01 16:31:59 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memmove(void *s1, const void *s2, size_t n)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t			i;
-	int				sens;
-	char			*c1;
-	const char		*c2;
-
-	if (s1 && s2)
-	{
-		i = 0;
-		sens = 1;
-		c1 = s1;
-		c2 = s2;
-		if (s1 >= s2 && n > 0)
-		{
-			i = n - 1;
-			sens = -1;
-		}
-		while (i != n * sens)
-		{
-			c1[i] = c2[i];
-			i += sens;
-		}
-	}
-	return (s1);
+	(void)alst;
+	(void)*del;
 }
