@@ -6,11 +6,19 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/26 17:03:35 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/26 17:32:50 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/01 15:13:38 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+
+static int	ft_abs(int n)
+{
+	if (n > 0)
+		return (n);
+	else
+		return (-n);
+}
 
 void	ft_putnbrb(long int n, unsigned int base)
 {
@@ -25,7 +33,7 @@ void	ft_putnbrb(long int n, unsigned int base)
 		}
 		if (n / base)
 		{
-			ft_putnbr(ft_abs(n / base));
+			ft_putnbrb(ft_abs(n / base), base);
 		}
 		a = ft_abs(n % base);
 		write(1, b + a, 1);

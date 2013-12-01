@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2013/11/30 23:47:15 by cfeijoo          ###   ########.fr        #
+#    Updated: 2013/12/01 14:53:44 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,6 @@ SRC	= ft_isprint.c		\
 	ft_strcmp.c			\
 	ft_strmap.c			\
 	ft_strstr.c			\
-	ft_abs.c			\
 	ft_memalloc.c		\
 	ft_putendl.c		\
 	ft_strcpy.c			\

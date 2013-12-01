@@ -6,11 +6,19 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:46:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/01 12:39:19 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/01 15:13:14 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+
+static int	ft_abs(int n)
+{
+	if (n > 0)
+		return (n);
+	else
+		return (-n);
+}
 
 static int	ft_getpower(int n, unsigned int base)
 {
@@ -32,15 +40,11 @@ char		*ft_itoa(int n)
 	unsigned int	length;
 
 	if (n == 0)
-	{
 		return ("0");
-	}
 	length = ft_getpower(n, 11) + (n < 0);
 	str = (char*)malloc(length * sizeof(*str));
 	if (n < 0)
-	{
 		str[0] = '-';
-	}
 	while (n)
 	{
 		str[length] = '0' + ft_abs(n % 10);
