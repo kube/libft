@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:49:29 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/25 06:14:01 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/01 11:33:04 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_putstr(char const *s)
 {
-	while (*s)
+	if (s)
 	{
-		write(1, s, 1);
-		s++;
+		while (*s)
+		{
+			write(1, s, 1);
+			s++;
+		}
 	}
 }

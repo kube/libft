@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:44:28 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/28 19:05:47 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/01 13:40:58 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_getwordsnb(char const *s, char c)
 
 	i = 0;
 	nb = 0;
-	while (s[i])
+	while (s && s[i])
 	{
 		while ((char)s[i] == c)
 			i++;
@@ -33,30 +33,28 @@ static int	ft_getwordsnb(char const *s, char c)
 
 char		**ft_strsplit(char const *s, char c)
 {
-	char			**splited;
 	char			*t;
-	size_t			i;
-	unsigned int	k;
-	
-	i = 0;
-	k = 0;
+	char			**splited;
+	size_t			k;
+
 	splited = (char**)malloc((ft_getwordsnb(s, c) + 1) * sizeof(char*));
 	t = ft_strdup(s);
-	while (t[i])
+	k = 0;
+	while (t && *t)
 	{
-		while ((char)t[i] == c)
+		while (*t == c)
 		{
-			t[i] = 0;
-			i++;
+			*t = 0;
+			t++;
 		}
-		if (t[i] && (char)t[i] != c)
+		if (*t && *t != c)
 		{
-			splited[k] = (char*)(t + i);
+			splited[k] = t;
 			k++;
 		}
-		while(t[i] && (char)t[i] != c)
-			i++;
+		while(*t && *t != c)
+			t++;
 	}
-	splited[k] = 0;
+	splited[k] = NULL;
 	return (splited);
 }

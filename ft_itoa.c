@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:46:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/28 03:28:06 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/01 12:39:19 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,6 @@ static int	ft_getpower(int n, unsigned int base)
 	return (power);
 }
 
-static void	ft_fillnbr(int n, char *str)
-{
-	if (n / 10)
-	{
-		ft_fillnbr(n / 10, str - 1);
-	}
-	*str = '0' + n % 10;
-}
-
 char		*ft_itoa(int n)
 {
 	char			*str;
@@ -44,13 +35,17 @@ char		*ft_itoa(int n)
 	{
 		return ("0");
 	}
-	length = ft_getpower(n, 10) + (n < 0);
+	length = ft_getpower(n, 11) + (n < 0);
 	str = (char*)malloc(length * sizeof(*str));
 	if (n < 0)
 	{
 		str[0] = '-';
 	}
-	ft_fillnbr(ft_abs(n), str + length - 1);
-	str[length] = 0;
+	while (n)
+	{
+		str[length] = '0' + ft_abs(n % 10);
+		n = ft_abs(n / 10);
+		length --;
+	}
 	return (str);
 }

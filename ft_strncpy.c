@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 02:15:04 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/30 23:51:21 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/11/30 23:55:46 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,9 @@ char	*ft_strncpy(char *s1, const char *s2, size_t n)
 	while (i < n)
 	{
 		if (i < len2)
-		{
 			s1[i] = s2[i];
-		}
 		else
-		{
 			s1[i] = 0;
-		}
 		i++;
 	}
 	return (s1);
