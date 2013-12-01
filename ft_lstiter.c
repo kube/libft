@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 16:35:03 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/01 16:36:50 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/01 18:56:27 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	(void)lst;
-	(void)*f;
+	if (lst && *f)
+	{
+		(*f)(lst);
+		if (lst->next)
+			ft_lstiter(lst->next, f);
+	}
 }
