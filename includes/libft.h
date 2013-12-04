@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 22:05:41 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/01 20:05:59 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/04 23:04:10 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ void	ft_putnbrb(long int n, unsigned int base);
 void	ft_poutrellestr(void *ptr, size_t size, int base);
 void	*ft_memdup(const void *oldmem, size_t size);
 void	ft_putlnbr(long int n);
+void	ft_lstqueueadd(t_list **alst, t_list *new);
 
 #endif
