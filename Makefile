@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2013/12/04 23:05:03 by cfeijoo          ###   ########.fr        #
+#    Updated: 2013/12/08 23:32:26 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ DH = ./includes/
 DSRC = .
 SRC	= ft_isprint.c		\
 	ft_memset.c			\
+	ft_lstfreeto.c		\
 	ft_strchr.c			\
 	ft_strlcat.c		\
 	ft_strrchr.c		\
