@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/04 22:55:28 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/05 16:07:25 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/08 22:09:58 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,21 @@ void	ft_lstqueueadd(t_list **alst, t_list *new)
 		current = *alst;
 		if (current)
 		{
+
+				ft_putendl("+0");
 			while (current->next)
+			{
+				ft_putendl("+1");
 				current = current->next;
+			}
+			ft_putendl("+2");
 			current->next = new;
+			ft_putendl("+3");
 		}
 		else
+		{
+			ft_putendl("+4");
 			ft_lstadd(alst, new);
+		}
 	}
 }
