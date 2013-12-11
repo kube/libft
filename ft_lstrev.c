@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/11 14:27:23 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/11 15:11:48 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/11 15:13:23 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 t_list	*ft_lstrev(t_list *current)
 {
 	t_list	*b;
-	t_list	*current;
 	t_list	*next;
 
 	b = NULL;
