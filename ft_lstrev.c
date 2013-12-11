@@ -6,20 +6,19 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/11 14:27:23 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/11 15:09:00 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/11 15:11:48 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_lstrev(t_list **alst)
+t_list	*ft_lstrev(t_list *current)
 {
 	t_list	*b;
 	t_list	*current;
 	t_list	*next;
 
 	b = NULL;
-	current = *alst;
 	while (current)
 	{
 		ft_putendl("a");
@@ -28,5 +27,5 @@ void	ft_lstrev(t_list **alst)
 		b = current;
 		current = next;
 	}
-	*alst = b;
+	return (b);
 }
