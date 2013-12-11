@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/11 14:27:23 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/11 15:02:28 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/11 15:09:00 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void	ft_lstrev(t_list **alst)
 		b = current;
 		current = next;
 	}
-	alst = &b;
+	*alst = b;
 }
