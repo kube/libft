@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/11 14:27:23 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/11 14:59:29 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/11 15:02:28 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_lstrev(t_list **alst)
 	current = *alst;
 	while (current)
 	{
+		ft_putendl("a");
 		next = current->next;
 		current->next = b;
 		b = current;
