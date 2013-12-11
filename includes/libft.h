@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 22:05:41 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/11 15:14:12 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/11 15:23:45 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstadd(t_list **alst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-t_list	*ft_lstrev(t_list *current);
+void	ft_lstrev(t_list **alst);
 
 
 void	ft_putnbrb(long int n, unsigned int base);
