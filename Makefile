@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2013/12/08 23:32:26 by cfeijoo          ###   ########.fr        #
+#    Updated: 2013/12/11 14:31:35 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = libft.a
 DH = ./includes/
 DSRC = .
 SRC	= ft_isprint.c		\
+	ft_lstrev.c			\
 	ft_memset.c			\
 	ft_lstfreeto.c		\
 	ft_strchr.c			\
@@ -79,7 +80,8 @@ SRC	= ft_isprint.c		\
 	ft_putnbrb.c		\
 	ft_memdup.c			\
 	ft_putlnbr.c		\
-	ft_lstqueueadd.c
+	ft_lstqueueadd.c	\
+	ft_strinarray.c
 
 
 OSRC = $(SRC:.c=.o)

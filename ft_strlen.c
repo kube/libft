@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 01:34:43 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/28 04:40:57 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/10 10:58:56 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlen (const char *s)
 
 	length = 0;
 	while (s[length])
-	{
-		length++;		
-	}
+		length++;
 	return (length);
-}	
+}

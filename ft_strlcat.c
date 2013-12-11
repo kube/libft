@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:05:17 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/30 21:51:02 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/11 14:33:52 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,21 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*d;
-	char	*s;
-	size_t	n;
-	size_t	dst_len;
+	char		*d;
+	const char	*s;
+	size_t		dlen;
+	size_t		n;
 
 	d = dst;
-	s = (char *) src;
+	s = src;
 	n = size;
-	while (n != 0 && *d != '\0')
-	{
-		n--;
+	while (n-- != 0 && *d != 0)
 		d++;
-	}
-	dst_len = d - dst;
-	n = size - dst_len;
-	if (n == 0)
-		return (dst_len + ft_strlen(s));
-	while (*s)
+	dlen = d - dst;
+	n = size - dlen;
+	if (!n)
+		return (dlen + ft_strlen(s));
+	while (*s != '\0')
 	{
 		if (n != 1)
 		{
@@ -40,6 +37,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		}
 		s++;
 	}
-	*d = '\0';
-	return (dst_len + (s - src));
+	*d = 0;
+	return (dlen + (s - src));
 }
