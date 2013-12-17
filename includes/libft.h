@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 22:05:41 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/11 15:23:45 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/17 18:12:48 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,6 @@ void	ft_lstqueueadd(t_list **alst, t_list *new);
 void	ft_lstfreeto(t_list **alst, t_list *to);
 
 ssize_t	ft_strinarray(char **array, char *str);
+char	ft_getchar(void);
 
 #endif

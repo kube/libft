@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2013/12/11 14:31:35 by cfeijoo          ###   ########.fr        #
+#    Updated: 2013/12/17 18:12:58 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,8 @@ SRC	= ft_isprint.c		\
 	ft_memdup.c			\
 	ft_putlnbr.c		\
 	ft_lstqueueadd.c	\
-	ft_strinarray.c
+	ft_strinarray.c		\
+	ft_getchar.c
 
 
 OSRC = $(SRC:.c=.o)
@@ -95,7 +96,6 @@ RANLIB = /usr/bin/ranlib
 $(NAME):
 	$(CC) -c -I$(DH) $(SRC) $(CFLAGS)
 	$(AR) rcs $(NAME) $(OSRC)
-	#$(RANLIB) $(NAME)
 
 all: $(NAME)
 
