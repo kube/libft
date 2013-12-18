@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2013/12/17 18:12:58 by cfeijoo          ###   ########.fr        #
+#    Updated: 2013/12/18 10:58:50 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,8 @@ SRC	= ft_isprint.c		\
 	ft_putlnbr.c		\
 	ft_lstqueueadd.c	\
 	ft_strinarray.c		\
-	ft_getchar.c
+	ft_getchar.c		\
+	ft_abs.c
 
 
 OSRC = $(SRC:.c=.o)

@@ -6,19 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:46:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/01 15:13:14 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/18 11:14:35 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-
-static int	ft_abs(int n)
-{
-	if (n > 0)
-		return (n);
-	else
-		return (-n);
-}
 
 static int	ft_getpower(int n, unsigned int base)
 {
