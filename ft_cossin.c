@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 17:15:48 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 17:51:01 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/22 18:02:29 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static double			ft_pow(double base, double ex)
 		return 1 / ft_pow(base, -ex);
 	else if ((unsigned long int)ex % 2 == 0)
 	{
-		half_pow = ft_pow(base, ex/2);
+		half_pow = ft_pow(base, ex / 2);
 		return (half_pow * half_pow);
 	}
 	else
@@ -43,11 +43,12 @@ static double			ft_pow(double base, double ex)
 }
 
 float					ft_cos(float x)
-{ 
+{
 	int					i;
 	float				cos;
 
-	x = (unsigned int)(x / (PI * 2)) * (PI * 2);
+	while (x > PI * 2)
+		x -= PI * 2;
 	i = 0;
 	cos = 0;
 	while (i < 10)
@@ -59,10 +60,12 @@ float					ft_cos(float x)
 }
 
 float					ft_sin(float x)
-{ 
+{
 	int					i;
 	float				sin;
 
+	while (x > PI * 2)
+		x -= PI * 2;
 	i = 0;
 	sin = 0;
 	while (i < 10)
