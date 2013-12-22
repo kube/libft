@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 17:15:48 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 18:09:47 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/22 18:17:11 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,17 @@ float					ft_cos(float x)
 {
 	int					i;
 	float				cos;
+	int					current_sign;
 
 	while (x > PI * 2)
 		x -= PI * 2;
 	i = 1;
 	cos = 1;
+	current_sign = -1;
 	while (i < 10)
 	{
-		cos = cos + ft_pow(-1, i) * ft_pow(x, 2 * i) / ft_factorielle(2 * i);
+		cos = cos + current_sign * ft_pow(x, 2 * i) / ft_factorielle(2 * i);
+		current_sign = -current_sign;
 		i++;
 	}
 	return (cos);
@@ -63,14 +66,17 @@ float					ft_sin(float x)
 {
 	int					i;
 	float				sin;
+	int					current_sign;
 
 	while (x > PI * 2)
 		x -= PI * 2;
-	i = 0;
-	sin = 0;
+	i = 1;
+	sin = x;
+	current_sign = -1;
 	while (i < 10)
 	{
-		sin = sin + ft_pow(-1, i) * ft_pow(x, 2 * i) / ft_factorielle(2 * i);
+		sin = sin + current_sign * ft_pow(x, 2 * i + 1) / ft_factorielle(2 * i + 1);
+		current_sign = -current_sign;
 		i++;
 	}
 	return (sin);
