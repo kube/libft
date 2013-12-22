@@ -6,15 +6,15 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 17:15:48 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 17:24:26 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/22 17:29:53 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-static unsigned int	ft_factorielle(int n)
+static unsigned long	ft_factorielle(unsigned long n)
 {
-	unsigned int	factorielle;
+	unsigned long		factorielle;
 
 	factorielle = 1;
 	while (n)
@@ -25,7 +25,7 @@ static unsigned int	ft_factorielle(int n)
 	return (factorielle);
 }
 
-static float		ft_pow(float base, float ex)
+static float			ft_pow(float base, float ex)
 {
 	if (ex == 0)
 		return 1;
@@ -40,10 +40,10 @@ static float		ft_pow(float base, float ex)
 		return base * ft_pow(base, ex - 1);
 }
 
-float				ft_cos(float x)
+float					ft_cos(float x)
 { 
-	int				i;
-	float			cos;
+	int					i;
+	float				cos;
 
 	i = 0;
 	cos = 0;
@@ -55,10 +55,10 @@ float				ft_cos(float x)
 	return (cos);
 }
 
-float				ft_sin(float x)
+float					ft_sin(float x)
 { 
-	int				i;
-	float			sin;
+	int					i;
+	float				sin;
 
 	i = 0;
 	sin = 0;
