@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 14:31:22 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 15:39:11 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/22 15:41:54 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 void		ft_bzero(void *s, size_t n)
 {
 	char	*cache;
+	size_t	limit;
 
-	cache = s;
-	while ((size_t)cache < (size_t)(cache + n))
+	cache = (char*)s;
+	limit = (size_t)s + n;
+	while ((size_t)cache < limit)
 	{
 		if (cache)
 			*cache = 0;
