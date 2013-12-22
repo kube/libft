@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 17:15:48 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 17:47:38 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/22 17:51:01 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ float					ft_cos(float x)
 	int					i;
 	float				cos;
 
-	x = x - (unsigned int)(x / (PI * 2) * PI * 2);
+	x = (unsigned int)(x / (PI * 2)) * (PI * 2);
 	i = 0;
 	cos = 0;
 	while (i < 10)
