@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 22:05:41 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 17:23:55 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/22 17:47:01 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <errno.h>
+
+# define PI	3.141592654 
 
 typedef struct		s_list
 {
