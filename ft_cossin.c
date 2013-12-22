@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 17:15:48 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 17:20:31 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/22 17:24:26 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static float		ft_pow(float base, float ex)
 		return half_pow * half_pow;
 	}
 	else
-		return base * pow(base, ex - 1);
+		return base * ft_pow(base, ex - 1);
 }
 
 float				ft_cos(float x)

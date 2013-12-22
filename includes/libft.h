@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 22:05:41 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/18 11:14:09 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/22 17:23:55 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,5 +100,8 @@ void	ft_lstfreeto(t_list **alst, t_list *to);
 
 ssize_t	ft_strinarray(char **array, char *str);
 char	ft_getchar(void);
+
+float	ft_cos(float x);
+float	ft_sin(float x);
 
 #endif
