@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 17:15:48 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 18:02:29 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2013/12/22 18:09:47 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ float					ft_cos(float x)
 
 	while (x > PI * 2)
 		x -= PI * 2;
-	i = 0;
-	cos = 0;
+	i = 1;
+	cos = 1;
 	while (i < 10)
 	{
 		cos = cos + ft_pow(-1, i) * ft_pow(x, 2 * i) / ft_factorielle(2 * i);
