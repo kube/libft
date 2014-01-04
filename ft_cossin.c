@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 17:15:48 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 18:25:25 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/01/04 17:03:18 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,21 @@ static float			ft_pow(float base, float ex)
 
 float					ft_cos(float x)
 {
+	static float		last_x = 0;
+	static float		cos = 1;
 	int					i;
-	float				cos;
 	int					sign;
 
-	while (x > PI * 2)
+	while (x > PI)
 		x -= PI * 2;
+	while (x < -PI)
+		x += PI * 2;
 	i = 1;
 	cos = 1;
 	sign = -1;
-	while (i < 10)
+	if (x == last_x)
+		return (cos);
+	while (i < LIMITED_DEV_COS_SIN)
 	{
 		cos = cos + sign * ft_pow(x, 2 * i) / ft_factorielle(2 * i);
 		sign = -sign;
@@ -64,16 +69,21 @@ float					ft_cos(float x)
 
 float					ft_sin(float x)
 {
+	static float		last_x = 0;
+	static float		sin = 0;
 	int					i;
-	float				sin;
 	int					sign;
 
-	while (x > PI * 2)
+	while (x > PI)
 		x -= PI * 2;
+	while (x < -PI)
+		x += PI * 2;
 	i = 1;
 	sin = x;
 	sign = -1;
-	while (i < 10)
+	if (x == last_x)
+		return (sin);
+	while (i < LIMITED_DEV_COS_SIN)
 	{
 		sin = sin + sign * ft_pow(x, 2 * i + 1) / ft_factorielle(2 * i + 1);
 		sign = -sign;

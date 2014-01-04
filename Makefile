@@ -6,11 +6,11 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2013/12/22 17:22:12 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/01/04 17:05:12 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = libft
 
 DH = ./includes/
 DSRC = .
@@ -68,14 +68,12 @@ SRC	= ft_isprint.c		\
 	ft_strcat.c			\
 	ft_strjoin.c		\
 	ft_strnstr.c		\
-						\
 	ft_lstnew.c			\
 	ft_lstdel.c			\
 	ft_lstdelone.c		\
 	ft_lstadd.c			\
 	ft_lstiter.c		\
 	ft_lstmap.c			\
-						\
 	ft_poutrellestr.c	\
 	ft_putnbrb.c		\
 	ft_memdup.c			\
@@ -86,30 +84,22 @@ SRC	= ft_isprint.c		\
 	ft_abs.c			\
 	ft_cossin.c
 
-
 OSRC = $(SRC:.c=.o)
-
-CFLAGS = -Wall -Wextra -Werror
 
 CC = /usr/bin/gcc
 AR = /usr/bin/ar
-RANLIB = /usr/bin/ranlib
-
-$(NAME):
-	$(CC) -c -I$(DH) $(SRC) $(CFLAGS)
-	$(AR) rcs $(NAME) $(OSRC)
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
+$(NAME):
+	$(CC) -c -I$(DH) $(SRC) $(CFLAGS)
+	$(AR) rcs $(NAME).a $(OSRC)
+
 clean:
-	if [ -f ft_bzero.c ]; \
-		then /bin/rm -f $(OSRC); \
-	fi
+	rm -f $(OSRC)
 
 fclean: clean
-	if [ -f $(NAME) ]; \
-		then /bin/rm -f $(NAME); \
-	fi
+	rm -f $(NAME).a
 
 re: fclean all
-
