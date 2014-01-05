@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 22:05:41 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/01/04 17:13:12 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/01/05 19:06:34 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <errno.h>
 
 # define LIMITED_DEV_COS_SIN 6
-# define PI	3.141592654 
+# define PI	3.141592654
 
 typedef struct		s_list
 {
@@ -56,7 +56,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-
 
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
@@ -106,5 +105,7 @@ char	ft_getchar(void);
 
 float	ft_cos(float x);
 float	ft_sin(float x);
+float	ft_invsqrt (float x);
+float	ft_sqrt(float x);
 
 #endif
