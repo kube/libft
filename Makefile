@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/02/17 22:39:20 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/02/17 23:45:22 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,13 +116,14 @@ SILENT_COLOR =	\x1b[34;01m
 all: $(NAME)
 
 %.o : %.c
-	@echo "Compiling$(NO_COLOR) $(<)"
+	@printf "Compiling$(NO_COLOR) $(<)"
 	@$(CC) -c $< -I$(INCLUDEFOLDERS) $(CFLAGS) -o $@
+	@echo "$(OK_COLOR)\t✓$(NO_COLOR)"
 
 $(NAME): $(OBJECTS)
 	@printf "$(SILENT_COLOR)Generating LibFt...$(NO_COLOR)"
 	@$(AR) rcs $(NAME).a $(OBJECTS)
-	@echo " $(OK_COLOR)Successful.$(NO_COLOR)"
+	@echo " $(OK_COLOR)Successful ✓$(NO_COLOR)"
 
 clean:
 	@rm -f $(OBJECTS)
