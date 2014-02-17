@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 17:15:48 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:16:30 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:38:03 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_math.h>
 
 static float			ft_factorielle(float n)
 {
@@ -44,8 +44,8 @@ static float			ft_pow(float base, float ex)
 
 float					ft_cos(float x)
 {
-	float				cos = 1;
 	int					i;
+	float				cos;
 	int					sign;
 
 	while (x > FT_PI)
@@ -66,9 +66,9 @@ float					ft_cos(float x)
 
 float					ft_sin(float x)
 {
-	float		sin = 0;
-	int			i;
-	int			sign;
+	int					i;
+	float				sin;
+	int					sign;
 
 	while (x > FT_PI)
 		x -= FT_PI * 2;

@@ -6,14 +6,14 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:44:28 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:34:49 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:45:30 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
+#include <ft_strings.h>
+#include <stdlib.h>
 
-static int	ft_getwordsnb(char const *s, char c)
+static int			ft_getwordsnb(char const *s, char c)
 {
 	unsigned int	nb;
 	size_t			i;
@@ -32,7 +32,7 @@ static int	ft_getwordsnb(char const *s, char c)
 	return (nb);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char				**ft_strsplit(char const *s, char c)
 {
 	char			*t;
 	char			**splited;

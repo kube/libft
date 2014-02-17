@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:50:39 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:59:02 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:41:35 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
-void	ft_putstr(char const *s);
-void	ft_putstr_fd(char const *s, int fd);
 ssize_t	ft_strinarray(char **array, char *str);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

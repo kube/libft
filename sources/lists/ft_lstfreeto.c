@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/08 23:28:23 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 20:03:12 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:35:55 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_lists.h>
 #include <stdlib.h>
 
 void	ft_lstfreeto(t_list **alst, t_list *to)

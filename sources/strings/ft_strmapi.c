@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:30:09 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:09:31 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:23:09 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include <ft_strings.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -22,5 +22,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ft_striteri((char*)s, (void(*)(unsigned int, char*))f);
 		return (newstr);
 	}
-	return (NULL);
+	return (0);
 }

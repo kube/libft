@@ -6,11 +6,12 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:18:02 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:33:56 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:43:26 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_memory.h>
+#include <ft_strings.h>
 
 void	ft_strclr(char *s)
 {

@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 16:35:03 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:14:36 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:36:02 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_lists.h>
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {

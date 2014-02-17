@@ -6,11 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 01:39:06 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:09:36 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:27:47 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include <stdlib.h>
+#include <ft_strings.h>
+#include <errno.h>
 
 char	*ft_strdup(const char *s1)
 {

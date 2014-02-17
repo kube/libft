@@ -6,11 +6,12 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:40:04 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:09:33 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:24:36 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include <ft_strings.h>
+#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

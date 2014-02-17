@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:42:43 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:09:23 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:22:24 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include <ft_strings.h>
 
 static int	ft_isspace(char	c)
 {
@@ -43,5 +43,5 @@ char	*ft_strtrim(char const *s)
 		newstr = ft_strsub(s, i, j - i);
 		return (newstr);
 	}
-	return (NULL);
+	return (0);
 }

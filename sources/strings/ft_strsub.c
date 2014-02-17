@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:37:52 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:09:25 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:23:52 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include <ft_strings.h>
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
@@ -22,5 +22,5 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		if (newstr)
 			return (ft_strncpy(newstr, s + start, len));
 	}
-	return (NULL);
+	return (0);
 }

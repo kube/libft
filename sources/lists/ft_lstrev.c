@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/11 14:27:23 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 20:09:03 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:36:21 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_lists.h>
 
 void	ft_lstrev(t_list **alst)
 {

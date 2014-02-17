@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/04 22:55:28 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:14:18 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:36:10 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_lists.h>
 
 void	ft_lstqueueadd(t_list **alst, t_list *new)
 {
