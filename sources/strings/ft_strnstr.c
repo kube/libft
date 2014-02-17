@@ -6,13 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:14:37 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 21:29:22 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:58:26 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <sys/types.h>
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char		*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	size_t	begin;
 	size_t	current;

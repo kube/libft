@@ -6,13 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:42:43 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 21:22:24 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:59:14 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_strings.h>
 
-static int	ft_isspace(char	c)
+static int			ft_isspace(char	c)
 {
 	if (c == ' ' ||
 		c == '\n' ||
@@ -26,7 +26,7 @@ static int	ft_isspace(char	c)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s)
+char				*ft_strtrim(char const *s)
 {
 	unsigned int	i;
 	unsigned int	j;

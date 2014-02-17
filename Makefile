@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/02/17 19:59:57 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/02/17 22:02:31 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,6 @@ SOURCES_STRINGS = \
 			sources/strings/ft_isalpha.c		\
 			sources/strings/ft_isascii.c		\
 			sources/strings/ft_isdigit.c		\
-
 
 SOURCES_MEMORY = \
 			sources/memory/ft_memset.c			\
@@ -106,18 +105,25 @@ OBJECTS = $(SOURCES:.c=.o)
 AR = ar
 CFLAGS = -Wall -Werror -Wextra
 
+.PHONY: all re clean fclean
+
 all: $(NAME)
 
 %.o : %.c
-	$(CC) -c $< -I$(INCLUDEFOLDERS) $(CFLAGS) -o $@
+	@echo "Compiling $(<:.c=)"
+	@$(CC) -c $< -I$(INCLUDEFOLDERS) $(CFLAGS) -o $@
 
 $(NAME): $(OBJECTS)
-	$(AR) rcs $(NAME).a $(OBJECTS)
+	@echo "Generating LibFt..."
+	@$(AR) rcs $(NAME).a $(OBJECTS)
+	@echo "Finished compilation."
 
 clean:
-	rm -f $(OBJECTS)
+	@rm -f $(OBJECTS)
+	@echo "Cleaned Objects"
 
 fclean: clean
-	rm -f $(NAME).a
+	@rm -f $(NAME).a
+	@echo "Cleaned Library"
 
 re: fclean all

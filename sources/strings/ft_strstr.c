@@ -6,14 +6,14 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:09:58 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:36:32 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:58:51 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(const char *s1, const char *s2)
+char		*ft_strstr(const char *s1, const char *s2)
 {
-	int	begin;
-	int	current;
+	int		begin;
+	int		current;
 
 	begin = 0;
 	current = 0;

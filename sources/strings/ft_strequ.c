@@ -6,11 +6,9 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:32:19 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:09:36 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 21:56:56 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 int	ft_strequ(char const *s1, char const *s2)
 {
