@@ -6,12 +6,11 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/02/17 22:02:31 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/02/17 22:39:20 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft
-
 INCLUDEFOLDERS = ./includes/
 
 SOURCES_STRINGS = \
@@ -105,25 +104,32 @@ OBJECTS = $(SOURCES:.c=.o)
 AR = ar
 CFLAGS = -Wall -Werror -Wextra
 
+# Colors
+NO_COLOR =		\x1b[0m
+OK_COLOR =		\x1b[32;01m
+ERROR_COLOR =	\x1b[31;01m
+WARN_COLOR =	\x1b[33;01m
+SILENT_COLOR =	\x1b[34;01m
+
 .PHONY: all re clean fclean
 
 all: $(NAME)
 
 %.o : %.c
-	@echo "Compiling $(<:.c=)"
+	@echo "Compiling$(NO_COLOR) $(<)"
 	@$(CC) -c $< -I$(INCLUDEFOLDERS) $(CFLAGS) -o $@
 
 $(NAME): $(OBJECTS)
-	@echo "Generating LibFt..."
+	@printf "$(SILENT_COLOR)Generating LibFt...$(NO_COLOR)"
 	@$(AR) rcs $(NAME).a $(OBJECTS)
-	@echo "Finished compilation."
+	@echo " $(OK_COLOR)Successful.$(NO_COLOR)"
 
 clean:
 	@rm -f $(OBJECTS)
-	@echo "Cleaned Objects"
+	@echo "$(WARN_COLOR)Cleaned Objects$(NO_COLOR)"
 
 fclean: clean
 	@rm -f $(NAME).a
-	@echo "Cleaned Library"
+	@echo "$(WARN_COLOR)Cleaned Library$(NO_COLOR)"
 
 re: fclean all
