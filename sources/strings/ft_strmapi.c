@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:30:09 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/30 23:16:28 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:09:31 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

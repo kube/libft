@@ -6,16 +6,14 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:09:58 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/10 10:59:42 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:36:32 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-
 char	*ft_strstr(const char *s1, const char *s2)
 {
-	size_t	begin;
-	size_t	current;
+	int	begin;
+	int	current;
 
 	begin = 0;
 	current = 0;
@@ -33,5 +31,5 @@ char	*ft_strstr(const char *s1, const char *s2)
 		if (!s2[current])
 			return ((char *)s1 + begin);
 	}
-	return (NULL);
+	return (0);
 }

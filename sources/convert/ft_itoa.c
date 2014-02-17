@@ -6,10 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:46:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/18 11:14:35 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 20:02:53 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <libft.h>
 
 static int	ft_getpower(int n, unsigned int base)

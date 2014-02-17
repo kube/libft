@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:22:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/01 00:45:02 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:09:34 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

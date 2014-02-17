@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/05 19:02:45 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/01/05 19:04:37 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:09:51 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+
 
 /*
 **	Quake 3's Fast Inverse Square Root

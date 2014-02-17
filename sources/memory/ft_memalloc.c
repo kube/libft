@@ -6,12 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 03:56:30 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/10 10:57:11 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 20:09:44 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
+#include <stdlib.h>
+#include <ft_memory.h>
+
 void	*ft_memalloc(size_t size)
 {
 	void	*new;

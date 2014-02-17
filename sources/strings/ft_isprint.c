@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 00:07:33 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/01/05 20:37:10 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:09:39 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+
 
 int	ft_isprint(int c)
 {

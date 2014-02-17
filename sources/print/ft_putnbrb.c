@@ -6,11 +6,12 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/26 17:03:35 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/18 11:14:57 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:26:52 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <unistd.h>
 
 void	ft_putnbrb(long int n, unsigned int base)
 {

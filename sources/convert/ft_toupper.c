@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 01:05:52 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/01/05 20:35:50 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:09:58 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+
 
 int	ft_toupper(int c)
 {

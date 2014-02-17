@@ -6,11 +6,12 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 02:46:45 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/18 10:59:47 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:30:40 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <unistd.h>
 
 void		ft_putnbr(int n)
 {

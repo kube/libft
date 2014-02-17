@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 01:34:43 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/01/05 20:37:25 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:25:06 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <sys/types.h>
 
 size_t	ft_strlen (const char *s)
 {

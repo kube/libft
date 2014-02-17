@@ -6,11 +6,12 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 16:27:46 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/04 23:55:58 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 20:07:42 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_lists.h>
+#include <stdlib.h>
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
@@ -27,5 +28,5 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 			current = current->next;
 		}
 	}
-	*alst = NULL;
+	*alst = 0;
 }

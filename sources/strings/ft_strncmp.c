@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:20:16 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/11/28 04:41:42 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:09:30 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

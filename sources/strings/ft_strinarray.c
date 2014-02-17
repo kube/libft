@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/09 16:49:02 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/01/05 20:20:55 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:09:35 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+
 
 ssize_t	ft_strinarray(char **array, char *str)
 {

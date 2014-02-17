@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 02:15:04 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/01/05 20:36:13 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:09:30 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+
 
 char	*ft_strncpy(char *s1, const char *s2, size_t n)
 {

@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:50:35 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/01 15:11:10 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:28:54 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void ft_putendl(char const *s)
 {
 	ft_putstr(s);
-	ft_putstr("\n");
+	ft_putchar('\n');
 }

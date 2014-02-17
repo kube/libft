@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 15:49:52 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 18:22:30 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 18:56:16 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdlib.h>
 
 void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {

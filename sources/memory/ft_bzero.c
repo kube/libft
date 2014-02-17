@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 14:31:22 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 16:28:53 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 18:55:22 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <stdlib.h>
 
 void		ft_bzero(void *s, size_t n)
 {

@@ -6,11 +6,12 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 16:32:44 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/01/05 20:21:48 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 20:08:13 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <ft_lists.h>
+#include <stdlib.h>
 
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
@@ -20,5 +21,5 @@ void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 			(*del)((*alst)->content, (*alst)->content_size);
 		free(*alst);
 	}
-	*alst = NULL;
+	*alst = 0;
 }

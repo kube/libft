@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 17:15:48 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/01/05 20:20:21 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:16:30 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ float					ft_cos(float x)
 	int					i;
 	int					sign;
 
-	while (x > PI)
-		x -= PI * 2;
-	while (x < -PI)
-		x += PI * 2;
+	while (x > FT_PI)
+		x -= FT_PI * 2;
+	while (x < -FT_PI)
+		x += FT_PI * 2;
 	i = 1;
 	cos = 1;
 	sign = -1;
@@ -70,10 +70,10 @@ float					ft_sin(float x)
 	int			i;
 	int			sign;
 
-	while (x > PI)
-		x -= PI * 2;
-	while (x < -PI)
-		x += PI * 2;
+	while (x > FT_PI)
+		x -= FT_PI * 2;
+	while (x < -FT_PI)
+		x += FT_PI * 2;
 	i = 1;
 	sin = x;
 	sign = -1;

@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 18:44:18 by cfeijoo           #+#    #+#             */
-/*   Updated: 2013/12/22 15:14:03 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:17:51 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <sys/types.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {

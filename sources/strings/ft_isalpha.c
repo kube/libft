@@ -6,11 +6,11 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 23:39:54 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/01/05 20:35:37 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/17 19:09:41 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+
 
 int	ft_isalpha(int c)
 {

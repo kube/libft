@@ -3,101 +3,119 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kube <kube@student.42.fr>                  +#+  +:+       +#+         #
+#    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/01/07 22:38:48 by kube             ###   ########.fr        #
+#    Updated: 2014/02/17 19:59:57 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft
 
-INCLUDEFOLDER = ./includes/
-CFILES =	ft_isprint.c		\
-			ft_lstrev.c			\
-			ft_memset.c			\
-			ft_lstfreeto.c		\
-			ft_strchr.c			\
-			ft_strlcat.c		\
-			ft_strrchr.c		\
-			ft_putchar.c		\
-			ft_strclr.c			\
-			ft_strlen.c			\
-			ft_strsplit.c		\
-			ft_itoa.c			\
-			ft_putchar_fd.c		\
-			ft_strcmp.c			\
-			ft_strmap.c			\
-			ft_strstr.c			\
-			ft_memalloc.c		\
-			ft_putendl.c		\
-			ft_strcpy.c			\
-			ft_strmapi.c		\
-			ft_strsub.c			\
-			ft_atoi.c			\
-			ft_memccpy.c		\
-			ft_putendl_fd.c		\
-			ft_strdel.c			\
-			ft_strncat.c		\
-			ft_strtrim.c		\
-			ft_bzero.c			\
-			ft_memchr.c			\
-			ft_putnbr.c			\
-			ft_strdup.c			\
-			ft_strncmp.c		\
-			ft_tolower.c		\
-			ft_isalnum.c		\
-			ft_memcmp.c			\
-			ft_putnbr_fd.c		\
-			ft_strequ.c			\
-			ft_strncpy.c		\
-			ft_toupper.c		\
-			ft_isalpha.c		\
-			ft_memcpy.c			\
-			ft_putstr.c			\
-			ft_striter.c		\
-			ft_strnequ.c		\
-			ft_isascii.c		\
-			ft_memdel.c			\
-			ft_putstr_fd.c		\
-			ft_striteri.c		\
-			ft_strnew.c			\
-			ft_isdigit.c		\
-			ft_memmove.c		\
-			ft_strcat.c			\
-			ft_strjoin.c		\
-			ft_strnstr.c		\
-			ft_lstnew.c			\
-			ft_lstdel.c			\
-			ft_lstdelone.c		\
-			ft_lstadd.c			\
-			ft_lstiter.c		\
-			ft_lstmap.c			\
-			ft_poutrellestr.c	\
-			ft_putnbrb.c		\
-			ft_memdup.c			\
-			ft_putlnbr.c		\
-			ft_lstqueueadd.c	\
-			ft_strinarray.c		\
-			ft_getchar.c		\
-			ft_abs.c			\
-			ft_sqrt.c			\
-			ft_cossin.c
+INCLUDEFOLDERS = ./includes/
 
-OFILES = $(CFILES:.c=.o)
+SOURCES_STRINGS = \
+			sources/strings/ft_strchr.c			\
+			sources/strings/ft_strlcat.c		\
+			sources/strings/ft_strrchr.c		\
+			sources/strings/ft_strclr.c			\
+			sources/strings/ft_strlen.c			\
+			sources/strings/ft_strsplit.c		\
+			sources/strings/ft_strcmp.c			\
+			sources/strings/ft_strmap.c			\
+			sources/strings/ft_strstr.c			\
+			sources/strings/ft_strdel.c			\
+			sources/strings/ft_strncat.c		\
+			sources/strings/ft_strtrim.c		\
+			sources/strings/ft_strcpy.c			\
+			sources/strings/ft_strmapi.c		\
+			sources/strings/ft_strsub.c			\
+			sources/strings/ft_strcat.c			\
+			sources/strings/ft_strjoin.c		\
+			sources/strings/ft_striter.c		\
+			sources/strings/ft_strnequ.c		\
+			sources/strings/ft_striteri.c		\
+			sources/strings/ft_strnew.c			\
+			sources/strings/ft_strequ.c			\
+			sources/strings/ft_strdup.c			\
+			sources/strings/ft_strncmp.c		\
+			sources/strings/ft_strncpy.c		\
+			sources/strings/ft_strnstr.c		\
+			sources/strings/ft_strinarray.c		\
+			sources/strings/ft_isprint.c		\
+			sources/strings/ft_isalnum.c		\
+			sources/strings/ft_isalpha.c		\
+			sources/strings/ft_isascii.c		\
+			sources/strings/ft_isdigit.c		\
 
-CC = cc
+
+SOURCES_MEMORY = \
+			sources/memory/ft_memset.c			\
+			sources/memory/ft_memdel.c			\
+			sources/memory/ft_memmove.c			\
+			sources/memory/ft_memalloc.c		\
+			sources/memory/ft_memccpy.c			\
+			sources/memory/ft_memcmp.c			\
+			sources/memory/ft_memdup.c			\
+			sources/memory/ft_memcpy.c			\
+			sources/memory/ft_memchr.c			\
+			sources/memory/ft_bzero.c			\
+
+SOURCES_LISTS = \
+			sources/lists/ft_lstfreeto.c		\
+			sources/lists/ft_lstadd.c			\
+			sources/lists/ft_lstqueueadd.c		\
+			sources/lists/ft_lstiter.c			\
+			sources/lists/ft_lstnew.c			\
+			sources/lists/ft_lstdel.c			\
+			sources/lists/ft_lstdelone.c		\
+			sources/lists/ft_lstmap.c			\
+			sources/lists/ft_lstrev.c			\
+
+SOURCES_PRINT = \
+			sources/print/ft_putstr_fd.c		\
+			sources/print/ft_putnbrb.c			\
+			sources/print/ft_putlnbr.c			\
+			sources/print/ft_putchar.c			\
+			sources/print/ft_putchar_fd.c		\
+			sources/print/ft_putendl.c			\
+			sources/print/ft_putendl_fd.c		\
+			sources/print/ft_putnbr.c			\
+			sources/print/ft_putstr.c			\
+			sources/print/ft_putnbr_fd.c		\
+
+SOURCES_CONVERT = \
+			sources/convert/ft_abs.c			\
+			sources/convert/ft_atoi.c			\
+			sources/convert/ft_itoa.c			\
+			sources/convert/ft_tolower.c		\
+			sources/convert/ft_toupper.c		\
+
+SOURCES_INPUT = \
+			sources/input/ft_getchar.c			\
+
+SOURCES_MATH = \
+			sources/math/ft_sqrt.c				\
+			sources/math/ft_cossin.c			\
+
+SOURCES = 	$(SOURCES_CONVERT) $(SOURCES_INPUT) $(SOURCES_LISTS) $(SOURCES_MATH) \
+			$(SOURCES_MEMORY) $(SOURCES_PRINT) $(SOURCES_STRINGS)
+
+OBJECTS = $(SOURCES:.c=.o)
+
 AR = ar
 CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) -c -I$(INCLUDEFOLDER) $(CFILES) $(CFLAGS)
-	$(AR) rcs $(NAME).a $(OFILES)
+%.o : %.c
+	$(CC) -c $< -I$(INCLUDEFOLDERS) $(CFLAGS) -o $@
+
+$(NAME): $(OBJECTS)
+	$(AR) rcs $(NAME).a $(OBJECTS)
 
 clean:
-	rm -f $(OFILES)
+	rm -f $(OBJECTS)
 
 fclean: clean
 	rm -f $(NAME).a
