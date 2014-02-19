@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   hash.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/01 16:37:01 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/19 04:05:04 by cfeijoo          ###   ########.fr       */
+/*   Created: 2014/02/19 04:08:13 by cfeijoo           #+#    #+#             */
+/*   Updated: 2014/02/19 04:13:23 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_lists.h>
-
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+unsigned int		basic_hash(char *str)
 {
-	t_list	*newlst;
+	int				c;
+	unsigned int	hash;
 
-	if (lst && *f)
-	{
-		newlst = (*f)(lst);
-		if (newlst && lst->next)
-			newlst->next = ft_lstmap(lst->next, f);
-		return (newlst);
-	}
-	return (0);
+	hash = 5381;
+	while ((c = *str++))
+		hash = ((hash << 5) + hash) + c;
+	return (hash);
 }

@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/02/19 02:55:50 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/02/19 04:12:13 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,7 @@ SOURCES_CONVERT = \
 			sources/convert/ft_itoa.c			\
 			sources/convert/ft_tolower.c		\
 			sources/convert/ft_toupper.c		\
+			sources/convert/hash.c				\
 
 SOURCES_INPUT = \
 			sources/input/ft_getchar.c			\
