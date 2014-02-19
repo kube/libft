@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/02/19 19:47:49 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/02/20 00:20:36 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,8 +99,11 @@ SOURCES_MATH = \
 			sources/math/vector_transformations.c	\
 			sources/math/vector_properties.c		\
 
+SOURCES_HASHMAP = \
+			sources/hashmap/hashmap.c				\
+
 SOURCES = 	$(SOURCES_CONVERT) $(SOURCES_INPUT) $(SOURCES_LISTS) $(SOURCES_MATH) \
-			$(SOURCES_MEMORY) $(SOURCES_PRINT) $(SOURCES_STRINGS)
+			$(SOURCES_MEMORY) $(SOURCES_PRINT) $(SOURCES_STRINGS) $(SOURCES_HASHMAP)
 
 OBJECTS = $(SOURCES:.c=.o)
 
