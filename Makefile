@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/02/19 01:46:11 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/02/19 02:55:50 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,8 +93,10 @@ SOURCES_INPUT = \
 			sources/input/ft_getchar.c			\
 
 SOURCES_MATH = \
-			sources/math/ft_sqrt.c				\
-			sources/math/ft_cossin.c			\
+			sources/math/ft_sqrt.c					\
+			sources/math/ft_cossin.c				\
+			sources/math/vector_transformations.c	\
+			sources/math/vector_properties.c		\
 
 SOURCES = 	$(SOURCES_CONVERT) $(SOURCES_INPUT) $(SOURCES_LISTS) $(SOURCES_MATH) \
 			$(SOURCES_MEMORY) $(SOURCES_PRINT) $(SOURCES_STRINGS)
@@ -117,7 +119,7 @@ SILENT_COLOR =	\x1b[30;01m
 all: $(NAME)
 
 %.o : %.c
-	@$(CC) -c $< -I$(INCLUDEFOLDERS) $(CFLAGS) -o $@
+	@$(CC) -c $< -I$(INCLUDEFOLDERS) $(CFLAGS) $(MACROS) -o $@
 	@printf "$(OK_COLOR)✓ $(NO_COLOR)"
 	@echo "$(<)"
 
