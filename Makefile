@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/02/17 23:45:22 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/02/19 01:46:11 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,6 +101,7 @@ SOURCES = 	$(SOURCES_CONVERT) $(SOURCES_INPUT) $(SOURCES_LISTS) $(SOURCES_MATH) 
 
 OBJECTS = $(SOURCES:.c=.o)
 
+CC = clang
 AR = ar
 CFLAGS = -Wall -Werror -Wextra
 
@@ -109,28 +110,28 @@ NO_COLOR =		\x1b[0m
 OK_COLOR =		\x1b[32;01m
 ERROR_COLOR =	\x1b[31;01m
 WARN_COLOR =	\x1b[33;01m
-SILENT_COLOR =	\x1b[34;01m
+SILENT_COLOR =	\x1b[30;01m
 
 .PHONY: all re clean fclean
 
 all: $(NAME)
 
 %.o : %.c
-	@printf "Compiling$(NO_COLOR) $(<)"
 	@$(CC) -c $< -I$(INCLUDEFOLDERS) $(CFLAGS) -o $@
-	@echo "$(OK_COLOR)\t✓$(NO_COLOR)"
+	@printf "$(OK_COLOR)✓ $(NO_COLOR)"
+	@echo "$(<)"
 
 $(NAME): $(OBJECTS)
-	@printf "$(SILENT_COLOR)Generating LibFt...$(NO_COLOR)"
+	@printf "$(SILENT_COLOR)Compiling LibFt...$(NO_COLOR)"
 	@$(AR) rcs $(NAME).a $(OBJECTS)
 	@echo " $(OK_COLOR)Successful ✓$(NO_COLOR)"
 
 clean:
 	@rm -f $(OBJECTS)
-	@echo "$(WARN_COLOR)Cleaned Objects$(NO_COLOR)"
+	@echo "$(SILENT_COLOR)Cleaned Objects$(NO_COLOR)"
 
 fclean: clean
 	@rm -f $(NAME).a
-	@echo "$(WARN_COLOR)Cleaned Library$(NO_COLOR)"
+	@echo "$(SILENT_COLOR)Cleaned Library$(NO_COLOR)"
 
 re: fclean all
