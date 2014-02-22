@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:39:24 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/19 03:04:44 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/23 00:29:24 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,30 @@ typedef struct			s_vector
 	float				z;
 }						t_vector;
 
-float	ft_cos(float x);
-float	ft_sin(float x);
-float	ft_invsqrt (float x);
-float	ft_sqrt(float x);
+typedef struct			s_infin_number
+{
+	int					sign;
+	char				*value;
+	unsigned int		length;
+	unsigned int		base;
+}						t_infin_number;
 
-void	vect_rot_z(t_vector *v, float angle);
-void	vect_rot_x(t_vector *v, float angle);
-void	vect_rot_y(t_vector *v, float angle);
-void	vect_scale(t_vector *v, float coeff);
+float			ft_cos(float x);
+float			ft_sin(float x);
+float			ft_invsqrt (float x);
+float			ft_sqrt(float x);
 
-float	vect_dot(t_vector *a, t_vector *b);
-float	vect_norm(t_vector *a);
+void			vect_rot_z(t_vector *v, float angle);
+void			vect_rot_x(t_vector *v, float angle);
+void			vect_rot_y(t_vector *v, float angle);
+void			vect_scale(t_vector *v, float coeff);
+
+float			vect_dot(t_vector *a, t_vector *b);
+float			vect_norm(t_vector *a);
+
+t_infin_number	*infin_add(t_infin_number *a, t_infin_number *b);
+int				infin_number_gt(t_infin_number *a, t_infin_number *b);
+void			print_infin_number(t_infin_number *number);
+t_infin_number	*load_infin_number(char *value);
 
 #endif

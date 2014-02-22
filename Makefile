@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/02/22 23:40:52 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/02/23 00:28:53 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,6 +104,10 @@ SOURCES_MATH = \
 			sources/math/ft_cossin.c				\
 			sources/math/vector_transformations.c	\
 			sources/math/vector_properties.c		\
+			sources/math/infin_add.c				\
+			sources/math/print_infin_number.c		\
+			sources/math/infin_number_gt.c			\
+			sources/math/load_infin_number.c		\
 
 SOURCES_HASHMAP = \
 			sources/hashmap/hashmap.c				\
