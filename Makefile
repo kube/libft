@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/02/22 16:31:52 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/02/22 23:17:57 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SOURCES_STRINGS = \
 			sources/strings/ft_strnequ.c		\
 			\
 			sources/strings/ft_strbeginwith.c	\
+			sources/strings/ft_strisnum.c		\
 			sources/strings/ft_strinarray.c		\
 			sources/strings/ft_isprint.c		\
 			sources/strings/ft_isalnum.c		\

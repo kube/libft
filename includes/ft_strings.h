@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:50:39 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/22 15:58:15 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/22 23:16:36 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_isprint(int c);
+
+int			ft_strisnum(char *str);
 
 int			ft_strbeginwith(char *a, char *b);
 

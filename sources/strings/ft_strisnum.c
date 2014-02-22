@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strisnum.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/23 00:04:52 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/22 23:18:01 by cfeijoo          ###   ########.fr       */
+/*   Created: 2014/02/22 23:13:52 by cfeijoo           #+#    #+#             */
+/*   Updated: 2014/02/22 23:17:55 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_strings.h>
 
-int	ft_isalnum(int c)
+/*
+**	Checks if string is only composed of digits (valid int)
+*/
+
+int		ft_strisnum(char *str)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
-	return (0);
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
 }
