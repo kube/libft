@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:57:42 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 21:41:39 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/22 16:32:08 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ void	ft_putnbrb(long int n, unsigned int base);
 void	ft_putlnbr(long int n);
 void	ft_putstr(char const *s);
 void	ft_putstr_fd(char const *s, int fd);
+void	exit_with_error(char *message, int error);
 
 #endif

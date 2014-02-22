@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/02/22 13:31:26 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/02/22 16:31:52 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,14 +32,17 @@ SOURCES_STRINGS = \
 			sources/strings/ft_strcat.c			\
 			sources/strings/ft_strjoin.c		\
 			sources/strings/ft_striter.c		\
-			sources/strings/ft_strnequ.c		\
 			sources/strings/ft_striteri.c		\
+			\
 			sources/strings/ft_strnew.c			\
-			sources/strings/ft_strequ.c			\
 			sources/strings/ft_strdup.c			\
 			sources/strings/ft_strncmp.c		\
 			sources/strings/ft_strncpy.c		\
 			sources/strings/ft_strnstr.c		\
+			sources/strings/ft_strequ.c			\
+			sources/strings/ft_strnequ.c		\
+			\
+			sources/strings/ft_strbeginwith.c	\
 			sources/strings/ft_strinarray.c		\
 			sources/strings/ft_isprint.c		\
 			sources/strings/ft_isalnum.c		\
@@ -81,6 +84,7 @@ SOURCES_PRINT = \
 			sources/print/ft_putnbr.c			\
 			sources/print/ft_putstr.c			\
 			sources/print/ft_putnbr_fd.c		\
+			sources/print/exit_with_error.c		\
 
 SOURCES_CONVERT = \
 			sources/convert/ft_abs.c			\
