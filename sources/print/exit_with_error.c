@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/22 16:04:57 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/22 16:31:49 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/22 23:19:40 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 void		exit_with_error(char *message, int error)
 {
-	ft_putendl_fd(message);
+	ft_putendl_fd(message, 2);
 	exit (error);
 }
