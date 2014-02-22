@@ -6,13 +6,23 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:39:39 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 20:03:56 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/22 13:29:48 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_INPUT_H
 # define FT_INPUT_H
+# define GNL_BUFF_SIZE 128000
 
-char	ft_getchar(void);
+typedef struct		s_read
+{
+	int				size;
+	int				index;
+	char			*read;
+	struct s_read	*next;
+}					t_read;
+
+int			get_next_line(char **line);
+char		ft_getchar(void);
 
 #endif
