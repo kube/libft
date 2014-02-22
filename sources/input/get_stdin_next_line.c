@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_stdin_next_line.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/22 13:26:09 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/22 13:31:24 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/02/22 23:39:31 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ static	int			ft_findendl(t_read *red)
 	return (size);
 }
 
-int					get_next_line(char **line)
+int					get_stdin_next_line(char **line)
 {
 	static t_read	*start = NULL;
 	t_read			*red;
