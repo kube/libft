@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/03/02 16:20:37 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/03/02 16:27:23 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -143,7 +143,7 @@ all: $(NAME)
 # Special Rules
 
 usemath:
-	@echo "$(WARN_COLOR)Compiling using Math.h Library$(NO_COLOR)"
+	@echo "$(WARN_COLOR)Compiling LibFt using Math.h$(NO_COLOR)"
 	$(eval MACROS := "-D USE_MATH=1")
 
 
