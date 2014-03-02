@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/03/02 16:27:23 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/03/02 20:52:41 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -112,11 +112,19 @@ SOURCES_MATH = \
 			math/infin_number_gt.c			\
 			math/load_infin_number.c		\
 
+SOURCES_COLORS = \
+			colors/blend_colors.c			\
+			colors/fade_colors.c			\
+			colors/color_blend_over.c		\
+			colors/color_blend_add.c		\
+			colors/color_blend_sub.c		\
+
 SOURCES_HASHMAP = \
 			hashmap/hashmap.c				\
 
-SOURCES = 	$(SOURCES_CONVERT) $(SOURCES_INPUT) $(SOURCES_LISTS) $(SOURCES_MATH) \
-			$(SOURCES_MEMORY) $(SOURCES_PRINT) $(SOURCES_STRINGS) $(SOURCES_HASHMAP)
+SOURCES = 	$(SOURCES_CONVERT) $(SOURCES_INPUT) $(SOURCES_LISTS) \
+			$(SOURCES_MATH) $(SOURCES_MEMORY) $(SOURCES_PRINT) \
+			$(SOURCES_STRINGS) $(SOURCES_COLORS) $(SOURCES_HASHMAP)
 
 OBJECTS = $(SOURCES:.c=.o)
 OBJECTS := $(subst /,__,$(OBJECTS))
