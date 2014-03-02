@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/03/02 20:52:41 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/03/02 21:38:38 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,7 +114,7 @@ SOURCES_MATH = \
 
 SOURCES_COLORS = \
 			colors/blend_colors.c			\
-			colors/fade_colors.c			\
+			colors/fade_color.c				\
 			colors/color_blend_over.c		\
 			colors/color_blend_add.c		\
 			colors/color_blend_sub.c		\
