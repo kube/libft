@@ -135,7 +135,9 @@ CC = clang
 AR = ar
 CFLAGS = -Wall -Werror -Wextra
 
+
 # Colors
+
 NO_COLOR =		\x1b[0m
 OK_COLOR =		\x1b[32;01m
 ERROR_COLOR =	\x1b[31;01m
@@ -143,19 +145,11 @@ WARN_COLOR =	\x1b[33;01m
 SILENT_COLOR =	\x1b[30;01m
 
 
-.PHONY: all re clean fclean
+# Basic Rules
+
+.PHONY: all re clean fclean nocolors nohash nolists noprint noinput noconvert nomemory nostrings nomath
 
 all: $(NAME)
-
-
-# Special Rules
-
-usemath:
-	@echo "$(WARN_COLOR)Compiling LibFt using Math.h$(NO_COLOR)"
-	$(eval MACROS := "-D USE_MATH=1")
-
-
-# Basic Rules
 
 $(OBJECTS_FOLDER)%.o:
 	@$(CC) -c $(subst .o,.c,$(subst $(OBJECTS_FOLDER),$(SOURCES_FOLDER),$(subst __,/,$@))) -I$(INCLUDEFOLDERS) $(CFLAGS) $(MACROS) -o $@
@@ -175,4 +169,37 @@ fclean: clean
 	@rm -f $(NAME).a
 	@echo "$(SILENT_COLOR)$(NAME) : Cleaned Library$(NO_COLOR)"
 
+
+# Special Rules
+
+usemath:
+	@echo "$(WARN_COLOR)Compiling LibFt using Math.h$(NO_COLOR)"
+	$(eval MACROS := "-D USE_MATH=1")
+
+nohash:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_HASHMAP:.c=.o))),,$(OBJECTS)))
+
+nocolors:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_COLORS:.c=.o))),,$(OBJECTS)))
+
+nolists:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_LISTS:.c=.o))),,$(OBJECTS)))
+
+noprint:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_PRINT:.c=.o))),,$(OBJECTS)))
+
+nomath:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_MATH:.c=.o))),,$(OBJECTS)))
+
+noinput:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_INPUT:.c=.o))),,$(OBJECTS)))
+
+nostrings:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_STRINGS:.c=.o))),,$(OBJECTS)))
+
+nomemory:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_MEMORY:.c=.o))),,$(OBJECTS)))
+
+noconvert:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_CONVERT:.c=.o))),,$(OBJECTS)))
 re: fclean all
