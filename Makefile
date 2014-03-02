@@ -147,7 +147,7 @@ SILENT_COLOR =	\x1b[30;01m
 
 # Basic Rules
 
-.PHONY: all re clean fclean nocolors nohash nolists noprint noinput noconvert nomemory nostrings nomath
+.PHONY: all re clean fclean nomemory
 
 all: $(NAME)
 
@@ -169,6 +169,8 @@ fclean: clean
 	@rm -f $(NAME).a
 	@echo "$(SILENT_COLOR)$(NAME) : Cleaned Library$(NO_COLOR)"
 
+re: fclean all
+
 
 # Special Rules
 
@@ -176,30 +178,65 @@ usemath:
 	@echo "$(WARN_COLOR)Compiling LibFt using Math.h$(NO_COLOR)"
 	$(eval MACROS := "-D USE_MATH=1")
 
-nohash:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_HASHMAP:.c=.o))),,$(OBJECTS)))
 
-nocolors:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_COLORS:.c=.o))),,$(OBJECTS)))
-
-nolists:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_LISTS:.c=.o))),,$(OBJECTS)))
-
-noprint:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_PRINT:.c=.o))),,$(OBJECTS)))
-
-nomath:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_MATH:.c=.o))),,$(OBJECTS)))
-
-noinput:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_INPUT:.c=.o))),,$(OBJECTS)))
-
-nostrings:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_STRINGS:.c=.o))),,$(OBJECTS)))
+# Substractive Rules
 
 nomemory:
 	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_MEMORY:.c=.o))),,$(OBJECTS)))
 
+nostrings:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_STRINGS:.c=.o))),,$(OBJECTS)))
+
+noprint:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_PRINT:.c=.o))),,$(OBJECTS)))
+
 noconvert:
 	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_CONVERT:.c=.o))),,$(OBJECTS)))
-re: fclean all
+
+nolists:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_LISTS:.c=.o))),,$(OBJECTS)))
+
+noinput:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_INPUT:.c=.o))),,$(OBJECTS)))
+
+nomath:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_MATH:.c=.o))),,$(OBJECTS)))
+
+nocolors:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_COLORS:.c=.o))),,$(OBJECTS)))
+
+nohash:
+	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_HASHMAP:.c=.o))),,$(OBJECTS)))
+
+
+# Additive Rules
+
+nothing:
+	@$(eval OBJECTS :=)
+
+addmemory:
+	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_MEMORY:.c=.o))))
+
+addstrings:
+	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_STRINGS:.c=.o))))
+
+addprint:
+	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_PRINT:.c=.o))))
+
+addconvert:
+	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_CONVERT:.c=.o))))
+
+addlists:
+	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_LISTS:.c=.o))))
+
+addinput:
+	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_INPUT:.c=.o))))
+
+addmath:
+	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_MATH:.c=.o))))
+
+addcolors:
+	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_COLORS:.c=.o))))
+
+addhash:
+	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_HASHMAP:.c=.o))))
