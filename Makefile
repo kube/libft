@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/03/02 15:12:09 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/03/02 16:20:37 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -149,10 +149,10 @@ usemath:
 
 # Basic Rules
 
-$(OBJECTS) : $(SOURCES)
-	@$(CC) -c $< -I$(INCLUDEFOLDERS) $(CFLAGS) $(MACROS) -o $@
+$(OBJECTS_FOLDER)%.o:
+	@$(CC) -c $(subst .o,.c,$(subst $(OBJECTS_FOLDER),$(SOURCES_FOLDER),$(subst __,/,$@))) -I$(INCLUDEFOLDERS) $(CFLAGS) $(MACROS) -o $@
 	@printf "$(OK_COLOR)✓ $(NO_COLOR)"
-	@echo "$(<)"
+	@echo "$(subst .o,.c,$(subst $(OBJECTS_FOLDER),$(SOURCES_FOLDER),$(subst __,/,$@)))"
 
 $(NAME): $(OBJECTS)
 	@printf "$(SILENT_COLOR)Compiling LibFt...$(NO_COLOR)"
