@@ -2,6 +2,21 @@ LibFt
 =====
 > "Arbre renversé par le vent avait plus de branches que de racines."
 
+##Construction
+This lib is separated in 9 sub-modules, the goal is to use what is really necessary in your program :
+
+|||
+|---|---|
+|**Colors**|Handles colors blend modes, complementaty color, and fade.|
+|**Convert**|Basic conversions on numbers and strings, and a basic hash function.|
+|**Hashmap**|Generic simple Hashmap to allocate variables dynamically, and be able to search in it.|
+|**Input**|Stuff to get user or file input.|
+|**Lists**|Lists structures, and functions to handle them.|
+|**Math**|Vectors, Infinite Numbers, Trigonometry, and basics.|
+|**Memory**|Functions to handle memory.|
+|**Print**|Print texts to terminal.|
+|**Strings**|Handle strings, make searches in them, check properties.|
+
 ##Compilation
 >Beware of the modules dependencies, that are not handled for now
 
@@ -44,23 +59,8 @@ make noprint noinput all
 make nothing addmemory addmath all
 ```
 
-##Construction
-This lib is separated in 9 sub-modules, the goal is to use what is really necessary in your program :
-
-|||
-|---|---|
-|**Colors**|Handles colors blend modes, complementaty color, and fade.|
-|**Convert**|Basic conversions on numbers and strings, and a basic hash function.|
-|**Hashmap**|Generic simple Hashmap to allocate variables dynamically, and be able to search in it.|
-|**Input**|Stuff to get user or file input.|
-|**Lists**|Lists structures, and functions to handle them.|
-|**Math**|Vectors, Infinite Numbers, Trigonometry, and basics.|
-|**Memory**|Functions to handle memory.|
-|**Print**|Print texts to terminal.|
-|**Strings**|Handle strings, make searches in them, check properties.|
-
 ##Things to do
-* Fix Makefile rules issues
+* Fix Makefile rules issues (Add selective rules and make all compiles everything)
 * Add Vectors Operations
 * Better Sin and Cos by putting angle to [-π;π] interval.
 * Check Hashmaps functions
