@@ -6,23 +6,23 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 17:15:48 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 21:38:03 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/03/02 16:52:09 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_math.h>
 
-static float			ft_factorielle(float n)
+static float			ft_factorial(float n)
 {
-	float				factorielle;
+	float				factorial;
 
-	factorielle = 1;
+	factorial = 1;
 	while (n)
 	{
-		factorielle *= n;
+		factorial *= n;
 		n--;
 	}
-	return (factorielle);
+	return (factorial);
 }
 
 static float			ft_pow(float base, float ex)
@@ -57,7 +57,7 @@ float					ft_cos(float x)
 	sign = -1;
 	while (i < LIMITED_DEV_COS_SIN)
 	{
-		cos = cos + sign * ft_pow(x, 2 * i) / ft_factorielle(2 * i);
+		cos = cos + sign * ft_pow(x, 2 * i) / ft_factorial(2 * i);
 		sign = -sign;
 		i++;
 	}
@@ -79,7 +79,7 @@ float					ft_sin(float x)
 	sign = -1;
 	while (i < LIMITED_DEV_COS_SIN)
 	{
-		sin = sin + sign * ft_pow(x, 2 * i + 1) / ft_factorielle(2 * i + 1);
+		sin = sin + sign * ft_pow(x, 2 * i + 1) / ft_factorial(2 * i + 1);
 		sign = -sign;
 		i++;
 	}
