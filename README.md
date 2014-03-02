@@ -6,7 +6,7 @@ LibFt
 >Beware of the modules dependencies, that are not handled for now
 
 |Rule|Description|
-|--|--|
+|----|-----------|
 |`usemath`|Use <math.h> for Math module, vectors properties. Will be faster.|
 |`nohashmap`|Will not compile *hashmaps* module|
 |`nocolors`|Will not compile *colors* module|
@@ -33,7 +33,7 @@ make noprint noinput all
 This lib is separated in 9 sub-modules, the goal is to use what is really necessary in your program :
 
 |||
-|--|--|
+|---|---|
 |**Colors**|Handles colors blend modes, complementaty color, and fade.|
 |**Convert**|Basic conversions on numbers and strings, and a basic hash function.|
 |**Hashmap**|Generic simple Hashmap to allocate variables dynamically, and be able to search in it.|
