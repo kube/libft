@@ -10,7 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #ifndef FT_MATH_H
+# ifdef USE_MATH
+#  include <math.h>
+# endif
 # define FT_MATH_H
 # define LIMITED_DEV_COS_SIN 6
 # define FT_PI	3.141592654
