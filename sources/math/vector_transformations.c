@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector_transformations.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lbinet <lbinet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/19 01:51:22 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/03/02 15:12:06 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/03/05 16:42:32 by lbinet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,14 @@ void			vect_scale(t_vector *v, float coeff)
 	v->x *= coeff;
 	v->y *= coeff;
 	v->z *= coeff;
+}
+
+void			normalize_vector(t_vector *a)
+{
+	float		norm;
+
+	norm = vect_norm(a);
+	a->x /= norm;
+	a->y /= norm;
+	a->z /= norm;
 }
