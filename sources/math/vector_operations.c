@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_input.h                                         :+:      :+:    :+:   */
+/*   vector_operations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kube <kube@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/02/17 19:39:39 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/03/11 01:05:55 by kube             ###   ########.fr       */
+/*   Created: 2014/03/10 02:14:08 by kube              #+#    #+#             */
+/*   Updated: 2014/03/11 00:20:46 by kube             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_INPUT_H
-# define FT_INPUT_H
-# define GNL_BUFF_SIZE 128000
+#include <ft_math.h>
 
-typedef struct		s_read
+t_vector		*vector_add(t_vector *a, t_vector *b, float coeff)
 {
-	int				size;
-	int				index;
-	char			*read;
-	struct s_read	*next;
-}					t_read;
-
-int			get_next_line(int file, char **line);
-int			get_stdin_next_line(char **line);
-char		ft_getchar(void);
-
-#endif
+	a->x += b->x * coeff;
+	a->y += b->y * coeff;
+	a->z += b->z * coeff;
+	return (a);
+}

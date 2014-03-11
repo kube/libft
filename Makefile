@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
+#    By: kube <kube@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/03/02 21:38:38 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/03/11 01:06:41 by kube             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,6 +101,7 @@ SOURCES_CONVERT = \
 SOURCES_INPUT = \
 			input/ft_getchar.c			\
 			input/get_stdin_next_line.c	\
+			input/get_next_line.c		\
 
 SOURCES_MATH = \
 			math/ft_sqrt.c					\
@@ -111,6 +112,7 @@ SOURCES_MATH = \
 			math/print_infin_number.c		\
 			math/infin_number_gt.c			\
 			math/load_infin_number.c		\
+			math/vector_operations.c		\
 
 SOURCES_COLORS = \
 			colors/blend_colors.c			\

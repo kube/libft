@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kube <kube@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:39:24 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/23 00:29:24 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/03/10 02:16:33 by kube             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void			vect_scale(t_vector *v, float coeff);
 
 float			vect_dot(t_vector *a, t_vector *b);
 float			vect_norm(t_vector *a);
+
+t_vector		*vector_add(t_vector *a, t_vector *b, float coeff);
 
 t_infin_number	*infin_add(t_infin_number *a, t_infin_number *b);
 int				infin_number_gt(t_infin_number *a, t_infin_number *b);
