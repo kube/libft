@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kube <kube@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:39:24 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/03/10 02:16:33 by kube             ###   ########.fr       */
+/*   Updated: 2014/03/12 02:25:35 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ float			vect_dot(t_vector *a, t_vector *b);
 float			vect_norm(t_vector *a);
 
 t_vector		*vector_add(t_vector *a, t_vector *b, float coeff);
+void			normalize_vector(t_vector *a);
 
 t_infin_number	*infin_add(t_infin_number *a, t_infin_number *b);
 int				infin_number_gt(t_infin_number *a, t_infin_number *b);
