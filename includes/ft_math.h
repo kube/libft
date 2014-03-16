@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:39:24 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/03/14 04:19:12 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/03/15 22:34:37 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void			vect_scale(t_vector *v, float coeff);
 float			vect_dot(t_vector *a, t_vector *b);
 float			vect_norm(t_vector *a);
 
-float			distance_between_points(t_point a, t_point b);
+t_vector		vector_from_points(t_vector *a, t_vector *b);
+float			distance_between_points(t_point *a, t_point *b);
 
 t_vector		*vector_add(t_vector *a, t_vector *b, float coeff);
 void			normalize_vector(t_vector *a);

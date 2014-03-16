@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/19 02:18:59 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/03/14 04:19:28 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/03/15 22:33:55 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,20 @@ float			vect_norm(t_vector *a)
 	return (SQRT(a->x * a->x + a->y * a->y + a->z * a->z));
 }
 
-float			distance_between_points(t_point a, t_point b)
+t_vector		vector_from_points(t_vector *a, t_vector *b)
 {
 	t_vector	c;
 
-	c.x = a.x - b.x;
-	c.y = a.y - b.y;
-	c.z = a.z - b.z;
+	c.x = a->x - b->x;
+	c.y = a->y - b->y;
+	c.z = a->z - b->z;
+	return (c);
+}
+
+float			distance_between_points(t_point *a, t_point *b)
+{
+	t_vector	c;
+
+	c = vector_from_points((t_vector*)a, (t_vector*)b);
 	return (vect_norm(&c));
 }
