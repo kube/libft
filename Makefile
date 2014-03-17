@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kube <kube@student.42.fr>                  +#+  +:+       +#+         #
+#    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/03/11 01:06:41 by kube             ###   ########.fr        #
+#    Updated: 2014/03/17 22:18:01 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,8 +86,10 @@ SOURCES_PRINT = \
 			print/ft_putendl.c			\
 			print/ft_putendl_fd.c		\
 			print/ft_putnbr.c			\
+			print/ft_putunbr.c			\
 			print/ft_putstr.c			\
 			print/ft_putnbr_fd.c		\
+			print/ft_putunbr_fd.c		\
 			print/exit_with_error.c		\
 
 SOURCES_CONVERT = \
