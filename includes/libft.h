@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kube <kube@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/23 22:05:41 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:59:10 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/03/18 02:52:47 by kube             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,8 @@
 # include "ft_memory.h"
 # include "ft_print.h"
 # include "ft_convert.h"
+# include "ft_colors.h"
+# include "ft_hashmap.h"
+# include "ft_dynamic_array.h"
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
+#    By: kube <kube@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/03/17 22:18:01 by cfeijoo          ###   ########.fr        #
+#    Updated: 2014/03/18 02:59:21 by kube             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,9 +126,13 @@ SOURCES_COLORS = \
 SOURCES_HASHMAP = \
 			hashmap/hashmap.c				\
 
+SOURCES_DYNAMIC_ARRAY = \
+			dynamic_array/dynamic_array.c	\
+
 SOURCES = 	$(SOURCES_CONVERT) $(SOURCES_INPUT) $(SOURCES_LISTS) \
 			$(SOURCES_MATH) $(SOURCES_MEMORY) $(SOURCES_PRINT) \
-			$(SOURCES_STRINGS) $(SOURCES_COLORS) $(SOURCES_HASHMAP)
+			$(SOURCES_STRINGS) $(SOURCES_COLORS) $(SOURCES_HASHMAP) \
+			$(SOURCES_DYNAMIC_ARRAY)
 
 OBJECTS = $(SOURCES:.c=.o)
 OBJECTS := $(subst /,__,$(OBJECTS))
