@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:39:24 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/03/15 22:34:37 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/03/26 19:42:58 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void			vect_rot_y(t_vector *v, float angle);
 void			vect_scale(t_vector *v, float coeff);
 
 float			vect_dot(t_vector *a, t_vector *b);
+t_vector		vect_product(t_vector *a, t_vector *b);
 float			vect_norm(t_vector *a);
 
 t_vector		vector_from_points(t_vector *a, t_vector *b);
