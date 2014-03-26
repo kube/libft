@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/19 02:18:59 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/03/15 22:33:55 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2014/03/26 19:45:23 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 float			vect_dot(t_vector *a, t_vector *b)
 {
-	return (SQRT(a->x * b->x + a->y * b->y + a->z * b->z));
+	return (a->x * b->x + a->y * b->y + a->z * b->z);
 }
 
 float			vect_norm(t_vector *a)
