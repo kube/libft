@@ -13,10 +13,14 @@
 NAME = libft
 INCLUDEFOLDERS = ./includes/
 
-SOURCES_FOLDER = sources/
-OBJECTS_FOLDER = objects/
+CC = clang
+AR = ar
+CFLAGS = -Wall -Werror -Wextra -O3
 
-SOURCES_STRINGS = \
+SRC_FOLDER = sources/
+OBJ_FOLDER = objects/
+
+SRC_STRINGS = \
 			strings/ft_strchr.c			\
 			strings/ft_strlcat.c		\
 			strings/ft_strrchr.c		\
@@ -54,7 +58,7 @@ SOURCES_STRINGS = \
 			strings/ft_isascii.c		\
 			strings/ft_isdigit.c		\
 
-SOURCES_MEMORY = \
+SRC_MEMORY = \
 			memory/ft_memset.c			\
 			memory/ft_memdel.c			\
 			memory/ft_memmove.c			\
@@ -66,7 +70,7 @@ SOURCES_MEMORY = \
 			memory/ft_memchr.c			\
 			memory/ft_bzero.c			\
 
-SOURCES_LISTS = \
+SRC_LISTS = \
 			lists/ft_lstfreeto.c		\
 			lists/ft_lstadd.c			\
 			lists/ft_lstqueueadd.c		\
@@ -77,7 +81,7 @@ SOURCES_LISTS = \
 			lists/ft_lstmap.c			\
 			lists/ft_lstrev.c			\
 
-SOURCES_PRINT = \
+SRC_PRINT = \
 			print/ft_putstr_fd.c		\
 			print/ft_putnbrb.c			\
 			print/ft_putlnbr.c			\
@@ -92,7 +96,7 @@ SOURCES_PRINT = \
 			print/ft_putunbr_fd.c		\
 			print/exit_with_error.c		\
 
-SOURCES_CONVERT = \
+SRC_CONVERT = \
 			convert/ft_abs.c			\
 			convert/ft_atoi.c			\
 			convert/ft_itoa.c			\
@@ -100,12 +104,12 @@ SOURCES_CONVERT = \
 			convert/ft_toupper.c		\
 			convert/hash.c				\
 
-SOURCES_INPUT = \
+SRC_INPUT = \
 			input/ft_getchar.c			\
 			input/get_stdin_next_line.c	\
 			input/get_next_line.c		\
 
-SOURCES_MATH = \
+SRC_MATH = \
 			math/ft_sqrt.c					\
 			math/ft_cossin.c				\
 			math/vector_transformations.c	\
@@ -116,135 +120,127 @@ SOURCES_MATH = \
 			math/load_infin_number.c		\
 			math/vector_operations.c		\
 
-SOURCES_COLORS = \
+SRC_COLORS = \
 			colors/blend_colors.c			\
 			colors/fade_color.c				\
 			colors/color_blend_over.c		\
 			colors/color_blend_add.c		\
 			colors/color_blend_sub.c		\
 
-SOURCES_HASHMAP = \
+SRC_HASHMAP = \
 			hashmap/hashmap.c				\
 
-SOURCES_DYNAMIC_ARRAY = \
+SRC_DYNAMIC_ARRAY = \
 			dynamic_array/dynamic_array.c	\
 
-SOURCES = 	$(SOURCES_CONVERT) $(SOURCES_INPUT) $(SOURCES_LISTS) \
-			$(SOURCES_MATH) $(SOURCES_MEMORY) $(SOURCES_PRINT) \
-			$(SOURCES_STRINGS) $(SOURCES_COLORS) $(SOURCES_HASHMAP) \
-			$(SOURCES_DYNAMIC_ARRAY)
 
-OBJECTS = $(SOURCES:.c=.o)
-OBJECTS := $(subst /,__,$(OBJECTS))
-OBJECTS := $(addprefix $(OBJECTS_FOLDER), $(OBJECTS))
-SOURCES := $(addprefix $(SOURCES_FOLDER),$(SOURCES))
+SRC = 	$(SRC_CONVERT) $(SRC_INPUT) $(SRC_LISTS) \
+		$(SRC_MATH) $(SRC_MEMORY) $(SRC_PRINT) \
+		$(SRC_STRINGS) $(SRC_COLORS) $(SRC_HASHMAP) \
+		$(SRC_DYNAMIC_ARRAY)
 
-CC = clang
-AR = ar
-CFLAGS = -Wall -Werror -Wextra
+OBJ = $(SRC:.c=.o)
+OBJ := $(subst /,__,$(OBJ))
+OBJ := $(addprefix $(OBJ_FOLDER), $(OBJ))
+SRC := $(addprefix $(SRC_FOLDER),$(SRC))
 
 
 # Colors
-
-NO_COLOR =		\x1b[0m
-OK_COLOR =		\x1b[32;01m
-ERROR_COLOR =	\x1b[31;01m
-WARN_COLOR =	\x1b[33;01m
-SILENT_COLOR =	\x1b[30;01m
+NO_COLOR     = \x1b[0m
+OK_COLOR     = \x1b[32;01m
+ERROR_COLOR  = \x1b[31;01m
+WARN_COLOR   = \x1b[33;01m
+SILENT_COLOR = \x1b[30;01m
 
 
 # Basic Rules
-
 .PHONY: all re clean fclean nomemory
 
 all: $(NAME)
 
-$(OBJECTS_FOLDER)%.o:
-	@$(CC) -c $(subst .o,.c,$(subst $(OBJECTS_FOLDER),$(SOURCES_FOLDER),$(subst __,/,$@))) -I$(INCLUDEFOLDERS) $(CFLAGS) $(MACROS) -o $@
+$(OBJ_FOLDER)%.o:
+	@$(CC) -c $(subst .o,.c,$(subst $(OBJ_FOLDER),$(SRC_FOLDER),$(subst __,/,$@))) -I$(INCLUDEFOLDERS) $(CFLAGS) $(LDFLAGS) -o $@
 	@printf "$(OK_COLOR)✓ $(NO_COLOR)"
-	@echo "$(subst .o,.c,$(subst $(OBJECTS_FOLDER),$(SOURCES_FOLDER),$(subst __,/,$@)))"
+	@echo "$(subst .o,.c,$(subst $(OBJ_FOLDER),$(SRC_FOLDER),$(subst __,/,$@)))"
 
-$(NAME): $(OBJECTS)
+$(NAME): $(OBJ)
 	@printf "$(SILENT_COLOR)Compiling LibFt...$(NO_COLOR)"
-	@$(AR) rcs $(NAME).a $(OBJECTS)
-	@echo " $(OK_COLOR)Successful ✓$(NO_COLOR)"
+	@$(AR) rcs $(NAME).a $(OBJ)
+	@echo " $(OK_COLOR)Done ✓$(NO_COLOR)"
 
 clean:
-	@rm -f $(OBJECTS)
-	@echo "$(SILENT_COLOR)$(NAME) : Cleaned Objects$(NO_COLOR)"
+	@rm -f $(OBJ)
+	@echo "$(SILENT_COLOR)$(NAME) : Removed Objects$(NO_COLOR)"
 
 fclean: clean
 	@rm -f $(NAME).a
-	@echo "$(SILENT_COLOR)$(NAME) : Cleaned Library$(NO_COLOR)"
+	@echo "$(SILENT_COLOR)$(NAME) : Removed Library$(NO_COLOR)"
 
 re: fclean all
 
 
 # Special Rules
-
 usemath:
 	@echo "$(WARN_COLOR)Compiling LibFt using Math.h$(NO_COLOR)"
-	$(eval MACROS := "-D USE_MATH=1")
+	$(eval LDFLAGS := "-D USE_MATH=1")
 
 
 # Substractive Rules
-
 nomemory:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_MEMORY:.c=.o))),,$(OBJECTS)))
+	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_MEMORY:.c=.o))),,$(OBJ)))
 
 nostrings:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_STRINGS:.c=.o))),,$(OBJECTS)))
+	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_STRINGS:.c=.o))),,$(OBJ)))
 
 noprint:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_PRINT:.c=.o))),,$(OBJECTS)))
+	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_PRINT:.c=.o))),,$(OBJ)))
 
 noconvert:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_CONVERT:.c=.o))),,$(OBJECTS)))
+	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_CONVERT:.c=.o))),,$(OBJ)))
 
 nolists:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_LISTS:.c=.o))),,$(OBJECTS)))
+	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_LISTS:.c=.o))),,$(OBJ)))
 
 noinput:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_INPUT:.c=.o))),,$(OBJECTS)))
+	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_INPUT:.c=.o))),,$(OBJ)))
 
 nomath:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_MATH:.c=.o))),,$(OBJECTS)))
+	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_MATH:.c=.o))),,$(OBJ)))
 
 nocolors:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_COLORS:.c=.o))),,$(OBJECTS)))
+	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_COLORS:.c=.o))),,$(OBJ)))
 
 nohash:
-	@$(eval OBJECTS := $(subst $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_HASHMAP:.c=.o))),,$(OBJECTS)))
+	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_HASHMAP:.c=.o))),,$(OBJ)))
 
 
 # Additive Rules
-
 nothing:
-	@$(eval OBJECTS :=)
+	@$(eval OBJ :=)
 
 addmemory:
-	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_MEMORY:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_MEMORY:.c=.o))))
 
 addstrings:
-	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_STRINGS:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_STRINGS:.c=.o))))
 
 addprint:
-	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_PRINT:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_PRINT:.c=.o))))
 
 addconvert:
-	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_CONVERT:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_CONVERT:.c=.o))))
 
 addlists:
-	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_LISTS:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_LISTS:.c=.o))))
 
 addinput:
-	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_INPUT:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_INPUT:.c=.o))))
 
 addmath:
-	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_MATH:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_MATH:.c=.o))))
 
 addcolors:
-	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_COLORS:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_COLORS:.c=.o))))
 
 addhash:
-	@$(eval OBJECTS += $(addprefix $(OBJECTS_FOLDER),$(subst /,__,$(SOURCES_HASHMAP:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_HASHMAP:.c=.o))))
