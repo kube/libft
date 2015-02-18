@@ -18,7 +18,6 @@ AR = ar
 CFLAGS = -Wall -Werror -Wextra -O3
 
 SRC_FOLDER = sources/
-OBJ_FOLDER = objects/
 
 SRC_STRINGS = \
 			strings/ft_strchr.c			\
@@ -139,10 +138,9 @@ SRC = 	$(SRC_CONVERT) $(SRC_INPUT) $(SRC_LISTS) \
 		$(SRC_STRINGS) $(SRC_COLORS) $(SRC_HASHMAP) \
 		$(SRC_DYNAMIC_ARRAY)
 
+SRC := $(addprefix $(SRC_FOLDER), $(SRC))
+
 OBJ = $(SRC:.c=.o)
-OBJ := $(subst /,__,$(OBJ))
-OBJ := $(addprefix $(OBJ_FOLDER), $(OBJ))
-SRC := $(addprefix $(SRC_FOLDER),$(SRC))
 
 
 # Colors
@@ -158,89 +156,89 @@ SILENT_COLOR = \x1b[30;01m
 
 all: $(NAME)
 
-$(OBJ_FOLDER)%.o:
-	@$(CC) -c $(subst .o,.c,$(subst $(OBJ_FOLDER),$(SRC_FOLDER),$(subst __,/,$@))) -I$(INCLUDEFOLDERS) $(CFLAGS) $(LDFLAGS) -o $@
+%.o: %.c
+	@$(CC) -c $< -I$(INCLUDEFOLDERS) $(CFLAGS) $(LDFLAGS) -o $@
 	@printf "$(OK_COLOR)✓ $(NO_COLOR)"
-	@echo "$(subst .o,.c,$(subst $(OBJ_FOLDER),$(SRC_FOLDER),$(subst __,/,$@)))"
+	@echo $<
 
 $(NAME): $(OBJ)
 	@printf "$(SILENT_COLOR)Compiling LibFt...$(NO_COLOR)"
 	@$(AR) rcs $(NAME).a $(OBJ)
-	@echo " $(OK_COLOR)Done ✓$(NO_COLOR)"
+	@printf " $(OK_COLOR)Done ✓$(NO_COLOR)\n"
 
 clean:
 	@rm -f $(OBJ)
-	@echo "$(SILENT_COLOR)$(NAME) : Removed Objects$(NO_COLOR)"
+	@printf "$(SILENT_COLOR)$(NAME) : Removed Objects$(NO_COLOR)\n"
 
 fclean: clean
 	@rm -f $(NAME).a
-	@echo "$(SILENT_COLOR)$(NAME) : Removed Library$(NO_COLOR)"
+	@printf "$(SILENT_COLOR)$(NAME) : Removed Library$(NO_COLOR)\n"
 
 re: fclean all
 
 
 # Special Rules
 usemath:
-	@echo "$(WARN_COLOR)Compiling LibFt using Math.h$(NO_COLOR)"
+	@printf "$(WARN_COLOR)Compiling LibFt using Math.h$(NO_COLOR)\n"
 	$(eval LDFLAGS := "-D USE_MATH=1")
 
 
 # Substractive Rules
 nomemory:
-	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_MEMORY:.c=.o))),,$(OBJ)))
+	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_MEMORY:.c=.o)),,$(OBJ)))
 
 nostrings:
-	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_STRINGS:.c=.o))),,$(OBJ)))
+	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_STRINGS:.c=.o)),,$(OBJ)))
 
 noprint:
-	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_PRINT:.c=.o))),,$(OBJ)))
+	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_PRINT:.c=.o)),,$(OBJ)))
 
 noconvert:
-	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_CONVERT:.c=.o))),,$(OBJ)))
+	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_CONVERT:.c=.o)),,$(OBJ)))
 
 nolists:
-	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_LISTS:.c=.o))),,$(OBJ)))
+	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_LISTS:.c=.o)),,$(OBJ)))
 
 noinput:
-	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_INPUT:.c=.o))),,$(OBJ)))
+	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_INPUT:.c=.o)),,$(OBJ)))
 
 nomath:
-	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_MATH:.c=.o))),,$(OBJ)))
+	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_MATH:.c=.o)),,$(OBJ)))
 
 nocolors:
-	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_COLORS:.c=.o))),,$(OBJ)))
+	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_COLORS:.c=.o)),,$(OBJ)))
 
-nohash:
-	@$(eval OBJ := $(subst $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_HASHMAP:.c=.o))),,$(OBJ)))
+nohashmap:
+	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_HASHMAP:.c=.o)),,$(OBJ)))
 
 
 # Additive Rules
-nothing:
+bare:
 	@$(eval OBJ :=)
 
 addmemory:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_MEMORY:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_MEMORY:.c=.o)))
 
 addstrings:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_STRINGS:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_STRINGS:.c=.o)))
 
 addprint:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_PRINT:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_PRINT:.c=.o)))
 
 addconvert:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_CONVERT:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_CONVERT:.c=.o)))
 
 addlists:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_LISTS:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_LISTS:.c=.o)))
 
 addinput:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_INPUT:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_INPUT:.c=.o)))
 
 addmath:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_MATH:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_MATH:.c=.o)))
 
 addcolors:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_COLORS:.c=.o))))
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_COLORS:.c=.o)))
 
-addhash:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(subst /,__,$(SRC_HASHMAP:.c=.o))))
+addhashmap:
+	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_HASHMAP:.c=.o)))

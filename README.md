@@ -34,7 +34,7 @@ This lib is separated in 9 sub-modules, the goal is to use what is really necess
 |`nomemory`|Will not compile *memory* module|
 |`noinput`|Will not compile *input* module|
 ||**Additive compilation**|
-|`nothing`|Remove all modules from compilation|
+|`bare`|Remove all modules from compilation|
 |`addcolors`|Will add *colors* module to compilation|
 |`addlists`|Will add *lists* module to compilation|
 |`addmath`|Will add *math* module to compilation|
@@ -56,11 +56,10 @@ make noprint noinput all
 ```
 ```sh
 #Will compile the lib with only memory and math modules
-make nothing addmemory addmath all
+make bare addmemory addmath all
 ```
 
 ##Things to do
-* Fix Makefile rules issues (Add selective rules and make all compiles everything)
 * Add Vectors Operations
 * Better Sin and Cos by putting angle to [-π;π] interval.
 * Check Hashmaps functions
