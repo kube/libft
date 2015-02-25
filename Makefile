@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2015/02/25 15:55:57 by cfeijoo          ###   ########.fr        #
+#    Updated: 2015/02/26 15:03:44 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -113,11 +113,16 @@ SRC_MATH = \
 			math/ft_cossin.c				\
 			math/vector_transformations.c	\
 			math/vector_properties.c		\
-			math/infin_add.c				\
-			math/print_infin_number.c		\
-			math/infin_number_gt.c			\
-			math/load_infin_number.c		\
 			math/vector_operations.c		\
+			\
+			math/load_infin_number.c		\
+			math/print_infin_number.c		\
+			math/infin_number_length.c		\
+			math/infin_number_eq.c			\
+			math/infin_number_lt.c			\
+			math/infin_number_gt.c			\
+			math/infin_add.c				\
+			math/infin_sub.c				\
 
 SRC_COLORS = \
 			colors/blend_colors.c			\

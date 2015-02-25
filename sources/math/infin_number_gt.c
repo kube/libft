@@ -6,13 +6,13 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/23 00:18:16 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/23 00:27:02 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/02/26 01:31:07 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_math.h>
 
-int						infin_number_gt(t_infin_number *a, t_infin_number *b)
+int						infin_number_gt(const t_infin_number *a, const t_infin_number *b)
 {
 	int					i;
 

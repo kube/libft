@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_infin_number.c                               :+:      :+:    :+:   */
+/*   infin_number_eq.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/02/23 00:20:46 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/02/24 00:00:14 by cfeijoo          ###   ########.fr       */
+/*   Created: 2014/02/23 00:18:16 by cfeijoo           #+#    #+#             */
+/*   Updated: 2015/02/27 01:53:09 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_math.h>
-#include <unistd.h>
 
-void				print_infin_number(t_infin_number *number)
+int						infin_number_eq(const t_infin_number *a, const t_infin_number *b)
 {
-	int				i;
-	char			digit;
+	int					i;
 
-	i = number->length - 1;
-	if (number->length > 0)
+	if (a->length > b->length)
+		return (0);
+	else if (b->length > a->length)
+		return (0);
+	i = a->length;
+	while (i >= 0)
 	{
-		if (number->sign == -1)
-			write(1, "-", 1);
-		while (i >= 0)
-		{
-			digit = '0' + number->value[i];
-			write(1, &digit, 1);
-			i--;
-		}
+		if (b->value[i] != a->value[i])
+			return (0);
+		i--;
 	}
-	else
-		write(1, "0", 1);
+	if (a->sign != b->sign && a->length)
+		return (0);
+	return (1);
 }

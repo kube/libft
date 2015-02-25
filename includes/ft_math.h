@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:39:24 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/03/26 19:42:58 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/02/26 15:03:18 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 #  include <math.h>
 # endif
 # define FT_MATH_H
-# define LIMITED_DEV_COS_SIN 6
-# define FT_PI	3.141592654
+# define LIMITED_DEV_COS_SIN	6
+# define FT_PI					3.141592654
 
 typedef struct			s_point
 {
@@ -38,7 +38,7 @@ typedef struct			s_infin_number
 	int					sign;
 	char				*value;
 	unsigned int		length;
-	unsigned int		base;
+	unsigned char		base;
 }						t_infin_number;
 
 float			ft_cos(float x);
@@ -61,9 +61,13 @@ float			distance_between_points(t_point *a, t_point *b);
 t_vector		*vector_add(t_vector *a, t_vector *b, float coeff);
 void			normalize_vector(t_vector *a);
 
-t_infin_number	*infin_add(t_infin_number *a, t_infin_number *b);
-int				infin_number_gt(t_infin_number *a, t_infin_number *b);
-void			print_infin_number(t_infin_number *number);
-t_infin_number	*load_infin_number(char *value);
+t_infin_number	*load_infin_number(const char *value);
+void			print_infin_number(const t_infin_number *number);
+unsigned int	infin_number_length(const t_infin_number *number);
+int				infin_number_eq(const t_infin_number *a, const t_infin_number *b);
+int				infin_number_lt(const t_infin_number *a, const t_infin_number *b);
+int				infin_number_gt(const t_infin_number *a, const t_infin_number *b);
+t_infin_number	*infin_add(const t_infin_number *a, const t_infin_number *b);
+t_infin_number	*infin_sub(const t_infin_number *a, const t_infin_number *b);
 
 #endif

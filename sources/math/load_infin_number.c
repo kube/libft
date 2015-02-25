@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/23 00:11:17 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/23 00:32:42 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/02/26 01:32:50 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,13 @@ static void				reverse_number(t_infin_number *number)
 	number->value = reversed_value;
 }
 
-t_infin_number			*load_infin_number(char *value)
+t_infin_number			*load_infin_number(const char *value)
 {
 	t_infin_number		*number;
 	unsigned int		length;
 	
 	number = (t_infin_number*)malloc(sizeof(t_infin_number));
+	number->base = 10;
 	if (*value == '-')
 	{
 		number->sign = -1;
@@ -44,7 +45,7 @@ t_infin_number			*load_infin_number(char *value)
 	}
 	else
 		number->sign = 1;
-	number->value = value;
+	number->value = ft_strdup(value);
 	while (*value == '0')
 		value++;
 	length = 0;
