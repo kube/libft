@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kube <kube@student.42.fr>                  +#+  +:+       +#+         #
+#    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2014/03/18 02:59:21 by kube             ###   ########.fr        #
+#    Updated: 2015/02/25 15:55:57 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -162,9 +162,12 @@ all: $(NAME)
 	@echo $<
 
 $(NAME): $(OBJ)
-	@printf "$(SILENT_COLOR)Compiling LibFt...$(NO_COLOR)"
+	@printf "$(SILENT_COLOR)Compiling $(NAME)...$(NO_COLOR)"
 	@$(AR) rcs $(NAME).a $(OBJ)
 	@printf " $(OK_COLOR)Done ✓$(NO_COLOR)\n"
+
+tests: $(NAME)
+	@make --no-print-directory -C tests re
 
 clean:
 	@rm -f $(OBJ)
@@ -182,63 +185,3 @@ usemath:
 	@printf "$(WARN_COLOR)Compiling LibFt using Math.h$(NO_COLOR)\n"
 	$(eval LDFLAGS := "-D USE_MATH=1")
 
-
-# Substractive Rules
-nomemory:
-	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_MEMORY:.c=.o)),,$(OBJ)))
-
-nostrings:
-	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_STRINGS:.c=.o)),,$(OBJ)))
-
-noprint:
-	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_PRINT:.c=.o)),,$(OBJ)))
-
-noconvert:
-	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_CONVERT:.c=.o)),,$(OBJ)))
-
-nolists:
-	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_LISTS:.c=.o)),,$(OBJ)))
-
-noinput:
-	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_INPUT:.c=.o)),,$(OBJ)))
-
-nomath:
-	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_MATH:.c=.o)),,$(OBJ)))
-
-nocolors:
-	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_COLORS:.c=.o)),,$(OBJ)))
-
-nohashmap:
-	@$(eval OBJ := $(subst $(addprefix $(SRC_FOLDER),$(SRC_HASHMAP:.c=.o)),,$(OBJ)))
-
-
-# Additive Rules
-bare:
-	@$(eval OBJ :=)
-
-addmemory:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_MEMORY:.c=.o)))
-
-addstrings:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_STRINGS:.c=.o)))
-
-addprint:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_PRINT:.c=.o)))
-
-addconvert:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_CONVERT:.c=.o)))
-
-addlists:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_LISTS:.c=.o)))
-
-addinput:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_INPUT:.c=.o)))
-
-addmath:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_MATH:.c=.o)))
-
-addcolors:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_COLORS:.c=.o)))
-
-addhashmap:
-	@$(eval OBJ += $(addprefix $(OBJ_FOLDER),$(SRC_HASHMAP:.c=.o)))
