@@ -16,24 +16,34 @@ This lib is divided in 9 sub-folders :
 |**Memory**|Functions to handle memory.|
 |**Print**|Print texts to terminal.|
 |**Strings**|Handle strings, make searches in them, check properties.|
+|**Test Framework**|A quick and dirty test framework.|
 
 ##Compilation
 
 |Rule|Description|
 |----|-----------|
-|`usemath`|Use <math.h> for Math module, vectors properties. Will be faster.|
+|`usemath`|Use `<math.h>` for Math module, vectors properties and geometry. Will be faster.|
+|`tests`|Launch tests after compilation|
 
-Compilation example :
+#####Compilation examples :
 ```sh
-#Will compile the lib with <math.h> functions
+# Compile the lib with <math.h> functions
 make usemath all
+```
+
+```sh
+# Compile the lib and run the tests
+make tests
+```
+
+```sh
+# Compile the lib with <math.h> and run the tests
+make usemath tests
 ```
 
 ##Things to do
 * Add Vectors Operations
 * Better Sin and Cos by putting angle to [-π;π] interval.
 * Check Hashmaps functions
-* Normalize Infinite Addition/Substraction
 * Add Infinite Multiplication
-* Handle zero in Infinite Numbers
 * Create Generic Lists
