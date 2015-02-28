@@ -42,6 +42,95 @@ static void		describe_infin_number_eq()
 }
 
 
+static void		assert_lt_result(const t_infin_number *a, const t_infin_number *b, int result)
+{
+	if (infin_number_lt(a, b) != result)
+	{
+		ft_putstr(TST_RED);
+		ft_putstr("     ERROR:");
+		ft_putstr(TST_NRM);
+		ft_putstr(" Expected ");
+		print_infin_number(a);
+		if (!result)
+			ft_putstr(" not");
+		ft_putstr(" to be inferior to ");
+		print_infin_number(b);
+		ft_putendl("");
+		ft_test_assertion_fail();
+	}
+}
+
+static void		describe_infin_number_lt()
+{
+	ft_test_it("returns true when a < b");
+		assert_lt_result(load_infin_number("0"), load_infin_number("1"), 1);
+		assert_lt_result(load_infin_number("3029384203948230948234"), load_infin_number("12409734029374230947234097234097129132488998"), 1);
+		assert_lt_result(load_infin_number("-23423498709809809809348230948203948209348209348"), load_infin_number("2348972349"), 1);
+
+	ft_test_it("returns false when a > b");
+		assert_lt_result(load_infin_number("4"), load_infin_number("2"), 0);
+		assert_lt_result(load_infin_number("91283019273091273109237"), load_infin_number("32"), 0);
+
+	ft_test_it("returns false when a == b");
+		assert_lt_result(load_infin_number("1"), load_infin_number("1"), 0);
+		assert_lt_result(load_infin_number("-92347203948239048230498234098234"), load_infin_number("-92347203948239048230498234098234"), 0);
+		assert_lt_result(load_infin_number("998098098098098230498234097235807234598634593846349856345898349993498573489989834753498573498"), load_infin_number("998098098098098230498234097235807234598634593846349856345898349993498573489989834753498573498"), 0);
+
+	ft_test_it("works with zeros");
+		assert_lt_result(load_infin_number("0"), load_infin_number("0"), 0);
+		assert_lt_result(load_infin_number("0"), load_infin_number("-0"), 0);
+		assert_lt_result(load_infin_number("-0"), load_infin_number("0"), 0);
+		assert_lt_result(load_infin_number("-0"), load_infin_number("-0"), 0);
+		assert_lt_result(load_infin_number("-0"), load_infin_number("23423423"), 1);
+		assert_lt_result(load_infin_number("0"), load_infin_number("-23423423"), 0);
+}
+
+
+static void		assert_gt_result(const t_infin_number *a, const t_infin_number *b, int result)
+{
+	if (infin_number_gt(a, b) != result)
+	{
+		ft_putstr(TST_RED);
+		ft_putstr("     ERROR:");
+		ft_putstr(TST_NRM);
+		ft_putstr(" Expected ");
+		print_infin_number(a);
+		if (!result)
+			ft_putstr(" not");
+		ft_putstr(" to be greater than ");
+		print_infin_number(b);
+		ft_putendl("");
+		ft_test_assertion_fail();
+	}
+}
+
+static void		describe_infin_number_gt()
+{
+
+	ft_test_it("returns false when a > b");
+		assert_gt_result(load_infin_number("4"), load_infin_number("2"), 1);
+		assert_gt_result(load_infin_number("91283019273091273109237"), load_infin_number("32"), 1);
+
+	ft_test_it("returns false when a < b");
+		assert_gt_result(load_infin_number("0"), load_infin_number("1"), 0);
+		assert_gt_result(load_infin_number("3029384203948230948234"), load_infin_number("12409734029374230947234097234097129132488998"), 0);
+		assert_gt_result(load_infin_number("-23423498709809809809348230948203948209348209348"), load_infin_number("2348972349"), 0);
+
+	ft_test_it("returns false when a == b");
+		assert_gt_result(load_infin_number("1"), load_infin_number("1"), 0);
+		assert_gt_result(load_infin_number("-92347203948239048230498234098234"), load_infin_number("-92347203948239048230498234098234"), 0);
+		assert_gt_result(load_infin_number("998098098098098230498234097235807234598634593846349856345898349993498573489989834753498573498"), load_infin_number("998098098098098230498234097235807234598634593846349856345898349993498573489989834753498573498"), 0);
+
+	ft_test_it("works with zeros");
+		assert_gt_result(load_infin_number("0"), load_infin_number("0"), 0);
+		assert_gt_result(load_infin_number("0"), load_infin_number("-0"), 0);
+		assert_gt_result(load_infin_number("-0"), load_infin_number("0"), 0);
+		assert_gt_result(load_infin_number("-0"), load_infin_number("-0"), 0);
+		assert_gt_result(load_infin_number("-0"), load_infin_number("23423423"), 0);
+		assert_gt_result(load_infin_number("0"), load_infin_number("-23423423"), 1);
+}
+
+
 static void		assert_add_result(const char *_a, const char *_b, const char *_result)
 {
 	t_infin_number* a = load_infin_number(_a);
@@ -127,6 +216,8 @@ static void		describe_infin_sub()
 int	main()
 {
 	ft_test_describe("infin_number_eq", &describe_infin_number_eq);
+	ft_test_describe("infin_number_lt", &describe_infin_number_lt);
+	ft_test_describe("infin_number_gt", &describe_infin_number_gt);
 	ft_test_describe("infin_add", &describe_infin_add);
 	ft_test_describe("infin_sub", &describe_infin_sub);
 

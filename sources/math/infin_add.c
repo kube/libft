@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/23 00:07:06 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/02/26 20:07:41 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/01 00:22:46 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static int				get_result_sign(const t_infin_number *a,
 	int					result_sign;
 
 	result_sign = 1;
-	if ((a->sign == 1 && b->sign == -1 && infin_number_gt(b, a)) ||
-		(a->sign == -1 && b->sign == 1 && infin_number_gt(a, b)))
+	if ((a->sign == 1 && b->sign == -1 && infin_number_abs_gt(b, a)) ||
+		(a->sign == -1 && b->sign == 1 && infin_number_abs_gt(a, b)))
 		result_sign = -1;
 	else if (a->sign == -1 && b->sign == -1)
 		result_sign = -1;

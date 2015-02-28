@@ -6,19 +6,20 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/23 00:18:16 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/02/26 01:31:07 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/01 00:23:01 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_math.h>
 
-int						infin_number_gt(const t_infin_number *a, const t_infin_number *b)
+int				infin_number_abs_gt(const t_infin_number *a,
+					const t_infin_number *b)
 {
-	int					i;
+	int			i;
 
 	if (a->length > b->length)
 		return (1);
-	else if (b->length > a->length)
+	else if (a->length < b->length)
 		return (0);
 	i = a->length;
 	while (i >= 0)
@@ -30,4 +31,17 @@ int						infin_number_gt(const t_infin_number *a, const t_infin_number *b)
 		i--;
 	}
 	return (0);
+}
+
+int				infin_number_gt(const t_infin_number *a,
+					const t_infin_number *b)
+{
+	if (a->length || b->length)
+	{
+		if (a->sign == 1 && b->sign == -1)
+			return (1);
+		else if (a->sign == -1 && b->sign == 1)
+			return (0);
+	}
+	return (infin_number_abs_gt(a, b));
 }

@@ -6,14 +6,14 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/23 00:20:46 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/02/24 00:00:14 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/01 00:44:12 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_math.h>
 #include <unistd.h>
 
-void				print_infin_number(t_infin_number *number)
+void				print_infin_number(const t_infin_number *number)
 {
 	int				i;
 	char			digit;

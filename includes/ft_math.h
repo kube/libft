@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:39:24 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/02/26 15:03:18 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/01 00:27:23 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ unsigned int	infin_number_length(const t_infin_number *number);
 int				infin_number_eq(const t_infin_number *a, const t_infin_number *b);
 int				infin_number_lt(const t_infin_number *a, const t_infin_number *b);
 int				infin_number_gt(const t_infin_number *a, const t_infin_number *b);
+int				infin_number_abs_eq(const t_infin_number *a, const t_infin_number *b);
+int				infin_number_abs_lt(const t_infin_number *a, const t_infin_number *b);
+int				infin_number_abs_gt(const t_infin_number *a, const t_infin_number *b);
 t_infin_number	*infin_add(const t_infin_number *a, const t_infin_number *b);
 t_infin_number	*infin_sub(const t_infin_number *a, const t_infin_number *b);
 
