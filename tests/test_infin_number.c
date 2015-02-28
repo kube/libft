@@ -213,11 +213,52 @@ static void		describe_infin_sub()
 		assert_sub_result("-0", "0", "0");	
 }
 
+
+static void		assert_length_result(const t_infin_number *a, unsigned int result)
+{
+	if (infin_number_length(a) != result)
+	{
+		ft_putstr(TST_RED);
+		ft_putstr("     ERROR:");
+		ft_putstr(TST_NRM);
+		ft_putstr(" Expected ");
+		print_infin_number(a);
+		ft_putstr(" length to be ");
+		ft_putnbr((unsigned int)result);
+		ft_putendl("");
+		ft_test_assertion_fail();
+	}
+}
+
+static void		describe_infin_number_length()
+{
+	ft_test_it("handles positive numbers");
+		assert_length_result(load_infin_number("1"), 1);
+		assert_length_result(load_infin_number("9"), 1);
+		assert_length_result(load_infin_number("10"), 2);
+		assert_length_result(load_infin_number("100"), 3);
+		assert_length_result(load_infin_number("3242342353453453453454"), 22);
+		assert_length_result(load_infin_number("2092374092374092734092734091724091247"), 37);
+
+	ft_test_it("handles negative numbers");
+		assert_length_result(load_infin_number("-1"), 1);
+		assert_length_result(load_infin_number("-9"), 1);
+		assert_length_result(load_infin_number("-10"), 2);
+		assert_length_result(load_infin_number("-100"), 3);
+		assert_length_result(load_infin_number("-3242342353453453453454"), 22);
+		assert_length_result(load_infin_number("-2092374092374092734092734091724091247"), 37);
+
+	ft_test_it("handles zeros");
+		assert_length_result(load_infin_number("-0"), 0);
+		assert_length_result(load_infin_number("0"), 0);
+}
+
 int	main()
 {
 	ft_test_describe("infin_number_eq", &describe_infin_number_eq);
 	ft_test_describe("infin_number_lt", &describe_infin_number_lt);
 	ft_test_describe("infin_number_gt", &describe_infin_number_gt);
+	ft_test_describe("infin_number_length", &describe_infin_number_length);
 	ft_test_describe("infin_add", &describe_infin_add);
 	ft_test_describe("infin_sub", &describe_infin_sub);
 
