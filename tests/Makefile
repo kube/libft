@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2015/02/26 00:43:42 by cfeijoo          ###   ########.fr        #
+#    Updated: 2015/03/01 01:38:39 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ CFLAGS = -Wall -Werror -Wextra -O3
 LDFLAGS = -L.. -lft
 
 
-SRC = 	test_infin_number.c
+SRC = 	test_infin_number.c		\
+		test_math.c				\
+		tests.c
 
 OBJ = $(SRC:.c=.o)
 

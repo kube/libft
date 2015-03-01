@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 15:22:01 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/02/28 21:48:49 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/01 02:05:49 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ static void		close_it()
 	if (!testing_state.it)
 		return;
 	if (testing_state.current_it_errors_count)
-		printf("  %sIt %s%s%s X %s\n", TST_SLT, TST_NRM, TST_RED, testing_state.it, TST_NRM);
+		printf("  %sIt %s%s%s X %s\n", TST_SLT, TST_NRM, TST_RED,
+			testing_state.it, TST_NRM);
 	else
 	{	
 		printf("  %sIt %s%s", TST_SLT, TST_NRM, testing_state.it);
@@ -48,7 +49,9 @@ void			ft_test_it(const char *name)
 	testing_state.it = name;
 }
 
-void			ft_test_assertion_fail() {
-	testing_state.current_describe_errors_count++;
-	testing_state.current_it_errors_count++;
+void			ft_test_module(const char *name, void (f)())
+{
+	printf("Module %s :\n", name);
+	f();
+	printf("\n");
 }

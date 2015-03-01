@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2015/02/28 21:47:29 by cfeijoo          ###   ########.fr        #
+#    Updated: 2015/03/01 16:47:56 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,6 +111,7 @@ SRC_INPUT = \
 SRC_MATH = \
 			math/ft_sqrt.c					\
 			math/ft_cossin.c				\
+			math/ft_fmod.c					\
 			math/vector_transformations.c	\
 			math/vector_properties.c		\
 			math/vector_operations.c		\
@@ -141,6 +142,8 @@ SRC_DYNAMIC_ARRAY = \
 SRC_TEST_FRAMEWORK = \
 			test_framework/test_framework.c	\
 			test_framework/test_init.c		\
+			test_framework/test_end.c		\
+			test_framework/assertion_fail.c	\
 
 
 SRC = 	$(SRC_CONVERT) $(SRC_INPUT) $(SRC_LISTS) \

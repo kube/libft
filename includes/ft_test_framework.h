@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:39:24 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/02/28 21:40:16 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/01 01:49:54 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ struct	s_test_state
 struct s_test_state	testing_state;
 
 void	ft_test_init();
+void	ft_test_module(const char *name, void (f)());
 void	ft_test_describe(const char *name, void (f)());
 void	ft_test_it(const char *name);
 void	ft_test_assertion_fail();

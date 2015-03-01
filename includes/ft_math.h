@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:39:24 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/03/01 00:27:23 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/01 17:55:43 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ typedef struct			s_infin_number
 	unsigned char		base;
 }						t_infin_number;
 
-float			ft_cos(float x);
-float			ft_sin(float x);
-float			ft_invsqrt (float x);
-float			ft_sqrt(float x);
+float			ft_cos(const float x);
+float			ft_sin(const float x);
+float			ft_invsqrt(const float x);
+float			ft_sqrt(const float x);
+double			ft_fmod(const double lhs, double rhs);
 
 void			vect_rot_z(t_vector *v, float angle);
 void			vect_rot_x(t_vector *v, float angle);

@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 17:15:48 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/03/02 16:52:09 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/01 02:45:36 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static float			ft_factorial(float n)
 	return (factorial);
 }
 
-static float			ft_pow(float base, float ex)
+static float			ft_pow(const float base, const float ex)
 {
 	float				half_pow;
 

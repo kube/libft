@@ -253,7 +253,7 @@ static void		describe_infin_number_length()
 		assert_length_result(load_infin_number("0"), 0);
 }
 
-int	main()
+void			test_infin_number()
 {
 	ft_test_describe("infin_number_eq", &describe_infin_number_eq);
 	ft_test_describe("infin_number_lt", &describe_infin_number_lt);
@@ -261,6 +261,4 @@ int	main()
 	ft_test_describe("infin_number_length", &describe_infin_number_length);
 	ft_test_describe("infin_add", &describe_infin_add);
 	ft_test_describe("infin_sub", &describe_infin_sub);
-
-	return 0;
 }
