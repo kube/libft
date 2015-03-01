@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/01 01:39:30 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/03/01 17:54:57 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/01 18:05:50 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ static void		describe_fmod()
 
 void			test_math()
 {
-	ft_test_describe("trignometry", describe_trigonometry);
+	ft_test_describe("trigonometry", describe_trigonometry);
 	ft_test_describe("square roots", describe_square_roots);
 	ft_test_describe("ft_fmod", describe_fmod);
 }
