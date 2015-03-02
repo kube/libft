@@ -19,5 +19,5 @@ unsigned int		infin_number_length(const t_infin_number *number)
 	length = number->length;
 	while (length && number->value[length - 1] == 0)
 		length--;
-	return length;
+	return (length);
 }

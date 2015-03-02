@@ -14,7 +14,7 @@
 **	Quake 3's Fast Inverse Square Root
 */
 
-float		ft_invsqrt (float x)
+float		ft_invsqrt(float x)
 {
 	int		i;
 	float	xhalf;

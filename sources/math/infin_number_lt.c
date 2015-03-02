@@ -12,13 +12,10 @@
 
 #include <ft_math.h>
 
-#include <stdio.h>
-
 int				infin_number_abs_lt(const t_infin_number *a,
 					const t_infin_number *b)
 {
 	int			i;
-
 
 	if (a->length > b->length)
 		return (0);

@@ -35,7 +35,7 @@ t_infin_number			*load_infin_number(const char *value)
 {
 	t_infin_number		*number;
 	unsigned int		length;
-	
+
 	number = (t_infin_number*)malloc(sizeof(t_infin_number));
 	number->base = 10;
 	if (*value == '-')

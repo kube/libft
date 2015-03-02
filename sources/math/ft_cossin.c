@@ -30,9 +30,9 @@ static float			ft_pow(const float base, const float ex)
 	float				half_pow;
 
 	if (ex == 0)
-		return 1;
+		return (1);
 	else if (ex < 0)
-		return 1 / ft_pow(base, -ex);
+		return (1 / ft_pow(base, -ex));
 	else if ((unsigned long)ex % 2 == 0)
 	{
 		half_pow = ft_pow(base, ex / 2);
@@ -48,7 +48,7 @@ float					ft_cos(float x)
 	float				cos;
 	int					sign;
 
-	x = ft_fmod(x, FT_PI * 2);
+	x = ft_fmod(x, FT_2PI);
 	i = 1;
 	cos = 1;
 	sign = -1;
@@ -67,7 +67,7 @@ float					ft_sin(float x)
 	float				sin;
 	int					sign;
 
-	x = ft_fmod(x, FT_PI * 2);
+	x = ft_fmod(x, FT_2PI);
 	i = 1;
 	sin = x;
 	sign = -1;

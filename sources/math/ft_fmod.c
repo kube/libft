@@ -12,6 +12,12 @@
 
 #include <ft_math.h>
 
+/*
+**	ft_fmod is not mathematically exact, and could have invalid results for
+**	particular cases because of the test to check
+**	the cast from float to int result
+*/
+
 static double	absf(const double x)
 {
 	return (x < 0 ? -x : x);
@@ -37,11 +43,6 @@ static double	modulo_highest_divider(const double lhs, double divider)
 	return (result);
 }
 
-/*
-**	ft_fmod is not mathematically exact, and could have invalid results for
-**	particular cases because of the test to check
-**	the cast from float to int result
-**/
 double			ft_fmod(const double lhs, double rhs)
 {
 	double		result;

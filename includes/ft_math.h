@@ -17,7 +17,8 @@
 # endif
 # define FT_MATH_H
 # define LIMITED_DEV_COS_SIN	6
-# define FT_PI					3.141592654
+# define FT_PI					3.14159265359
+# define FT_2PI					6.28318530718
 
 typedef struct			s_point
 {
