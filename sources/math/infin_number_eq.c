@@ -17,7 +17,7 @@ int				infin_number_abs_eq(const t_infin_number *a,
 {
 	int			i;
 
-	i = a->length;
+	i = a->length - 1;
 	while (i >= 0)
 	{
 		if (b->value[i] != a->value[i])

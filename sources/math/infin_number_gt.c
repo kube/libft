@@ -21,7 +21,7 @@ int				infin_number_abs_gt(const t_infin_number *a,
 		return (1);
 	else if (a->length < b->length)
 		return (0);
-	i = a->length;
+	i = a->length - 1;
 	while (i >= 0)
 	{
 		if (b->value[i] > a->value[i])
