@@ -12,16 +12,19 @@
 
 #include <ft_math.h>
 
+#include <stdio.h>
+
 int				infin_number_abs_lt(const t_infin_number *a,
 					const t_infin_number *b)
 {
 	int			i;
 
+
 	if (a->length > b->length)
 		return (0);
 	else if (a->length < b->length)
 		return (1);
-	i = a->length;
+	i = a->length - 1;
 	while (i >= 0)
 	{
 		if (b->value[i] > a->value[i])
