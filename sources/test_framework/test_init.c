@@ -12,15 +12,13 @@
 
 #include <ft_test_framework.h>
 
-void		ft_test_init()
+void		ft_test_init(void)
 {
 	testing_state.describe = 0;
 	testing_state.it = 0;
-
 	testing_state.describe_count = 0;
 	testing_state.it_count = 0;
 	testing_state.current_describe_it_count = 0;
-
 	testing_state.errors_count = 0;
 	testing_state.current_describe_errors_count = 0;
 	testing_state.current_it_errors_count = 0;

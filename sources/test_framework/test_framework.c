@@ -13,23 +13,23 @@
 #include <ft_test_framework.h>
 #include <stdio.h>
 
-static void		close_it()
+static void		close_it(void)
 {
 	if (!testing_state.it)
-		return;
+		return ;
 	if (testing_state.current_it_errors_count)
-		printf("  %sIt %s%s%s X %s\n", TST_SLT, TST_NRM, TST_RED,
+		printf("  %sIt %s%s%s FAIL %s\n", TST_SLT, TST_NRM, TST_RED,
 			testing_state.it, TST_NRM);
 	else
-	{	
+	{
 		printf("  %sIt %s%s", TST_SLT, TST_NRM, testing_state.it);
-		printf("%s  ✓%s\n", TST_GRN, TST_NRM);
+		printf("%s  OK%s\n", TST_GRN, TST_NRM);
 	}
 	testing_state.it = NULL;
 	testing_state.current_it_errors_count = 0;
 }
 
-static void		close_describe()
+static void		close_describe(void)
 {
 	close_it();
 	testing_state.describe = NULL;

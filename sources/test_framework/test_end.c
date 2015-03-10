@@ -13,11 +13,11 @@
 #include <ft_test_framework.h>
 #include <stdio.h>
 
-void		ft_test_end()
+void		ft_test_end(void)
 {
 	if (testing_state.errors_count)
 		printf("%s%d errors%s\n\n", TST_RED,
 			testing_state.errors_count, TST_NRM);
 	else
-		printf("%sSuccess ✓%s\n\n", TST_GRN, TST_NRM);
+		printf("%sSuccess%s\n\n", TST_GRN, TST_NRM);
 }

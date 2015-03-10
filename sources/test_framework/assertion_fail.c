@@ -12,7 +12,8 @@
 
 #include <ft_test_framework.h>
 
-void			ft_test_assertion_fail() {
+void			ft_test_assertion_fail(void)
+{
 	testing_state.current_describe_errors_count++;
 	testing_state.current_it_errors_count++;
 	testing_state.errors_count++;
