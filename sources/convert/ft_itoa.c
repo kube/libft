@@ -42,7 +42,7 @@ char				*ft_itoa(int n)
 	{
 		str[length] = '0' + ft_abs(n % 10);
 		n = ft_abs(n / 10);
-		length --;
+		length--;
 	}
 	return (str);
 }

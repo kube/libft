@@ -12,7 +12,7 @@
 
 #include <ft_strings.h>
 
-static int	ft_isspace(char	c)
+static int	ft_isspace(char c)
 {
 	if (c == ' ' ||
 		c == '\n' ||
