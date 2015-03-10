@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2015/03/01 16:47:56 by cfeijoo          ###   ########.fr        #
+#    Updated: 2015/03/10 17:52:34 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -135,10 +135,6 @@ SRC_COLORS = \
 SRC_HASHMAP = \
 			hashmap/hashmap.c				\
 
-SRC_DYNAMIC_ARRAY = \
-			dynamic_array/dynamic_array.c	\
-
-
 SRC_TEST_FRAMEWORK = \
 			test_framework/test_framework.c	\
 			test_framework/test_init.c		\
@@ -149,7 +145,7 @@ SRC_TEST_FRAMEWORK = \
 SRC = 	$(SRC_CONVERT) $(SRC_INPUT) $(SRC_LISTS) \
 		$(SRC_MATH) $(SRC_MEMORY) $(SRC_PRINT) \
 		$(SRC_STRINGS) $(SRC_COLORS) $(SRC_HASHMAP) \
-		$(SRC_DYNAMIC_ARRAY) $(SRC_TEST_FRAMEWORK)
+		$(SRC_TEST_FRAMEWORK)
 
 SRC := $(addprefix $(SRC_FOLDER), $(SRC))
 
