@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2015/03/10 17:52:34 by cfeijoo          ###   ########.fr        #
+#    Updated: 2015/03/10 18:06:35 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,8 +105,6 @@ SRC_CONVERT = \
 
 SRC_INPUT = \
 			input/ft_getchar.c			\
-			input/get_stdin_next_line.c	\
-			input/get_next_line.c		\
 
 SRC_MATH = \
 			math/ft_sqrt.c					\
