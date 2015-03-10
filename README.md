@@ -43,7 +43,6 @@ make usemath tests
 
 ##Things to do
 * Add Vectors Operations
-* Better Sin and Cos by putting angle to [-π;π] interval.
 * Check Hashmaps functions
 * Add Infinite Multiplication
 * Create Generic Lists
