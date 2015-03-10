@@ -12,7 +12,7 @@
 
 #include <ft_strings.h>
 
-char	*ft_strmap(char const*s, char (*f)(char))
+char		*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*newstr;
 

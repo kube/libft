@@ -24,9 +24,9 @@ static int			ft_getwordsnb(char const *s, char c)
 	{
 		while ((char)s[i] == c)
 			i++;
-		if(s[i] && (char)s[i] != c)
+		if (s[i] && (char)s[i] != c)
 			nb++;
-		while(s[i] && (char)s[i] != c)
+		while (s[i] && (char)s[i] != c)
 			i++;
 	}
 	return (nb);
@@ -53,7 +53,7 @@ char				**ft_strsplit(char const *s, char c)
 			splited[k] = t;
 			k++;
 		}
-		while(*t && *t != c)
+		while (*t && *t != c)
 			t++;
 	}
 	splited[k] = 0;
