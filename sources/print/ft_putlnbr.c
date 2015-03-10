@@ -12,16 +12,16 @@
 
 #include <unistd.h>
 
-static long int	ft_labs(long int n)
+static long int		ft_labs(long int n)
 {
 	if (n < 0)
 		return (-n);
 	return (n);
 }
 
-void		ft_putlnbr(long int n)
+void				ft_putlnbr(long int n)
 {
-	char	a;
+	char			a;
 
 	if (n < 0)
 		write(1, "-", 1);

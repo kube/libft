@@ -6,7 +6,7 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2015/03/10 18:06:35 by cfeijoo          ###   ########.fr        #
+#    Updated: 2015/03/10 19:06:17 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,6 @@ SRC_LISTS = \
 
 SRC_PRINT = \
 			print/ft_putstr_fd.c		\
-			print/ft_putnbrb.c			\
 			print/ft_putlnbr.c			\
 			print/ft_putchar.c			\
 			print/ft_putchar_fd.c		\
