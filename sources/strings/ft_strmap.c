@@ -12,14 +12,20 @@
 
 #include <ft_strings.h>
 
-char		*ft_strmap(char const *s, char (*f)(char))
+char				*ft_strmap(char const *s, char (*f)(char))
 {
-	char	*newstr;
+	char			*newstr;
+	unsigned int	i;
 
 	if (s && *f)
 	{
 		newstr = ft_strdup(s);
-		ft_striter((char*)newstr, (void(*)(char*))f);
+		i = 0;
+		while (i < ft_strlen(s))
+		{
+			newstr[i] = f(s[i]);
+			i++;
+		}
 		return (newstr);
 	}
 	return (0);

@@ -17,14 +17,11 @@ char		*ft_strnew(size_t size)
 {
 	char	*newstr;
 
-	if (size)
+	newstr = (char*)malloc((size + 1) * sizeof(char));
+	if (newstr)
 	{
-		newstr = (char*)malloc((size + 1) * sizeof(char));
-		if (newstr)
-		{
-			ft_bzero(newstr, size + 1);
-			return (newstr);
-		}
+		ft_bzero(newstr, size + 1);
+		return (newstr);
 	}
-	return (0);
+	return (NULL);
 }

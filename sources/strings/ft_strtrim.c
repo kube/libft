@@ -37,7 +37,7 @@ char				*ft_strtrim(char const *s)
 		i = 0;
 		while (ft_isspace(s[i]))
 			i++;
-		j = ft_strlen(s);
+		j = ft_strlen(s) - 1;
 		while (ft_isspace(s[j]))
 			j--;
 		newstr = ft_strsub(s, i, j - i);

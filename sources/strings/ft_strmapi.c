@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/24 04:30:09 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 22:42:35 by cfeijoo          ###   ########.fr       */
+/*   Created: 2013/11/24 04:24:44 by cfeijoo           #+#    #+#             */
+/*   Updated: 2014/02/17 21:21:37 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_strings.h>
 
-char		*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*newstr;
+	char			*newstr;
+	unsigned int	i;
 
 	if (s && *f)
 	{
 		newstr = ft_strdup(s);
-		ft_striteri((char*)s, (void(*)(unsigned int, char*))f);
+		i = 0;
+		while (i < ft_strlen(s))
+		{
+			newstr[i] = f(i, s[i]);
+			i++;
+		}
 		return (newstr);
 	}
 	return (0);
