@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 04:42:43 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/02/20 18:56:40 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/14 18:50:49 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ char				*ft_strtrim(char const *s)
 	if (s)
 	{
 		i = 0;
-		while (ft_isspace(s[i]))
+		while (s[i] && ft_isspace(s[i]))
 			i++;
 		j = ft_strlen(s) - 1;
-		while (ft_isspace(s[j]))
+		while (s[i] && ft_isspace(s[j]))
 			j--;
-		newstr = ft_strsub(s, i, j - i);
+		newstr = ft_strsub(s, i, j - i + 1);
 		return (newstr);
 	}
 	return (0);

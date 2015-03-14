@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 15:22:01 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/03/01 02:05:49 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/14 18:23:55 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ static void		close_it(void)
 	if (!testing_state.it)
 		return ;
 	if (testing_state.current_it_errors_count)
-		printf("  %sIt %s%s%s FAIL %s\n", TST_SLT, TST_NRM, TST_RED,
+		printf("  %sIt %s%s%s [FAIL] %s\n", TST_SLT, TST_NRM, TST_RED,
 			testing_state.it, TST_NRM);
 	else
 	{
 		printf("  %sIt %s%s", TST_SLT, TST_NRM, testing_state.it);
-		printf("%s  OK%s\n", TST_GRN, TST_NRM);
+		printf("  %s[OK]%s\n", TST_GRN, TST_NRM);
 	}
 	testing_state.it = NULL;
 	testing_state.current_it_errors_count = 0;

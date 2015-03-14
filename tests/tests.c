@@ -17,6 +17,7 @@ int			main()
 {
 	ft_test_module("infin_number", test_infin_number);
 	ft_test_module("math", test_math);
+	ft_test_module("strings", test_strings);
 	ft_test_end();
 	return (0);
 }
