@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:39:24 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/03/01 01:49:54 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/14 20:48:58 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
 # define TST_WHT	"\x1B[37m"
 # define TST_SLT	"\x1B[30;01m"
 
-struct	s_test_state
+struct				s_test_state
 {
-	const char *describe;
-	const char *it;
+	const char		*describe;
+	const char		*it;
 
 	unsigned int	describe_count;
 	unsigned int	it_count;
@@ -39,11 +39,11 @@ struct	s_test_state
 
 struct s_test_state	testing_state;
 
-void	ft_test_init();
-void	ft_test_module(const char *name, void (f)());
-void	ft_test_describe(const char *name, void (f)());
-void	ft_test_it(const char *name);
-void	ft_test_assertion_fail();
-void	ft_test_end();
+void				ft_test_init();
+void				ft_test_module(const char *name, void (f)());
+void				ft_test_describe(const char *name, void (f)());
+void				ft_test_it(const char *name);
+void				ft_test_assertion_fail();
+void				ft_test_end();
 
 #endif

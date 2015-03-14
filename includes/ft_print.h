@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/17 19:57:42 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/03/17 22:17:07 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/14 20:48:04 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_PRINT_H
 
 void	ft_putchar(char c);
-void 	ft_putendl(char const *s);
+void	ft_putendl(char const *s);
 void	ft_putnbr(int n);
 void	ft_putunbr(unsigned int n);
 void	ft_putchar_fd(char c, int fd);
