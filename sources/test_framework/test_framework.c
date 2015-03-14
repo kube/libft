@@ -6,7 +6,7 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 15:22:01 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/03/14 18:23:55 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/14 19:05:51 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void			ft_test_it(const char *name)
 
 void			ft_test_module(const char *name, void (f)())
 {
-	printf("Module %s :\n", name);
+	printf("%s:: Module%s %s :\n", TST_GRN, TST_NRM, name);
 	f();
 	printf("\n");
 }
