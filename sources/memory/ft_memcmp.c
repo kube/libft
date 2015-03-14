@@ -6,26 +6,24 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 20:48:59 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 19:20:29 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/14 20:09:15 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <sys/types.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int			ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i;
-	const char		*c1;
-	const char		*c2;
+	int		c;
 
-	i = 0;
-	c1 = s1;
-	c2 = s2;
-	while (i < n)
+	while (n)
 	{
-		if (c1[i] != c2[i])
-			return (c1[i] - c2[i]);
-		i++;
+		c = (int)(*((unsigned char*)s1) - *((unsigned char*)s2));
+		s1 = (void*)((char*)s1 + 1);
+		s2 = (void*)((char*)s2 + 1);
+		if (c)
+			return (c);
+		n--;
 	}
 	return (0);
 }
