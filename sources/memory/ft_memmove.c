@@ -6,35 +6,25 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 18:13:36 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 21:38:36 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/14 19:50:36 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
+#include <stdlib.h>
+#include <ft_memory.h>
 
-void	*ft_memmove(void *s1, const void *s2, size_t n)
+void		*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t			i;
-	int				sens;
-	char			*c1;
-	const char		*c2;
+	void	*buf;
 
-	if (s1 && s2)
+	buf = NULL;
+	if (len)
+		buf = malloc(len);
+	if (buf)
 	{
-		i = 0;
-		sens = 1;
-		c1 = s1;
-		c2 = s2;
-		if (s1 >= s2 && n > 0)
-		{
-			i = n - 1;
-			sens = -1;
-		}
-		while (i != n * sens)
-		{
-			c1[i] = c2[i];
-			i += sens;
-		}
+		ft_memcpy(buf, src, len);
+		ft_memcpy(dst, buf, len);
+		free(buf);
 	}
-	return (s1);
+	return (dst);
 }
