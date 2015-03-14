@@ -6,25 +6,18 @@
 /*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/24 02:20:16 by cfeijoo           #+#    #+#             */
-/*   Updated: 2014/02/17 21:28:40 by cfeijoo          ###   ########.fr       */
+/*   Updated: 2015/03/14 20:37:38 by cfeijoo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <sys/types.h>
 
-int			ft_strncmp(const char *s1, const char *s2, size_t n)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n)
-		i++;
-	if (i < n)
-	{
-		if (s1[i] > s2[i])
-			return (1);
-		else if (s1[i] < s2[i])
-			return (-1);
-	}
-	return (0);
+	if ((*s1 == '\0' && *s2 == '\0') || n == 0)
+		return (0);
+	else if (*s1 == *s2)
+		return (ft_strncmp(s1 + 1, s2 + 1, n - 1));
+	else
+		return ((unsigned char)*s1 - (unsigned char)*s2);
 }
