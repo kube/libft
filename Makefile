@@ -6,20 +6,21 @@
 #    By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/24 16:52:10 by cfeijoo           #+#    #+#              #
-#    Updated: 2015/03/10 19:06:17 by cfeijoo          ###   ########.fr        #
+#    Updated: 2015/11/16 20:16:38 by cfeijoo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft
-INCLUDEFOLDERS = ./includes/
+NAME := libft
+INCLUDEFOLDERS := -I include/
 
-CC = clang
-AR = ar
-CFLAGS = -Wall -Werror -Wextra -O3
+SOURCES_FOLDER := src/
+OBJECTS_FOLDER := obj/
 
-SRC_FOLDER = sources/
+vpath %.c src
 
-SRC_STRINGS = \
+CFLAGS := -Wall -Werror -Wextra -O3
+
+SRC_STRINGS := \
 			strings/ft_strchr.c			\
 			strings/ft_strlcat.c		\
 			strings/ft_strrchr.c		\
@@ -57,7 +58,7 @@ SRC_STRINGS = \
 			strings/ft_isascii.c		\
 			strings/ft_isdigit.c		\
 
-SRC_MEMORY = \
+SRC_MEMORY := \
 			memory/ft_memset.c			\
 			memory/ft_memdel.c			\
 			memory/ft_memmove.c			\
@@ -69,7 +70,7 @@ SRC_MEMORY = \
 			memory/ft_memchr.c			\
 			memory/ft_bzero.c			\
 
-SRC_LISTS = \
+SRC_LISTS := \
 			lists/ft_lstfreeto.c		\
 			lists/ft_lstadd.c			\
 			lists/ft_lstqueueadd.c		\
@@ -80,7 +81,7 @@ SRC_LISTS = \
 			lists/ft_lstmap.c			\
 			lists/ft_lstrev.c			\
 
-SRC_PRINT = \
+SRC_PRINT := \
 			print/ft_putstr_fd.c		\
 			print/ft_putlnbr.c			\
 			print/ft_putchar.c			\
@@ -94,7 +95,7 @@ SRC_PRINT = \
 			print/ft_putunbr_fd.c		\
 			print/exit_with_error.c		\
 
-SRC_CONVERT = \
+SRC_CONVERT := \
 			convert/ft_abs.c			\
 			convert/ft_atoi.c			\
 			convert/ft_itoa.c			\
@@ -102,10 +103,10 @@ SRC_CONVERT = \
 			convert/ft_toupper.c		\
 			convert/hash.c				\
 
-SRC_INPUT = \
+SRC_INPUT := \
 			input/ft_getchar.c			\
 
-SRC_MATH = \
+SRC_MATH := \
 			math/ft_sqrt.c					\
 			math/ft_cossin.c				\
 			math/ft_fmod.c					\
@@ -122,66 +123,69 @@ SRC_MATH = \
 			math/infin_add.c				\
 			math/infin_sub.c				\
 
-SRC_COLORS = \
+SRC_COLORS := \
 			colors/blend_colors.c			\
 			colors/fade_color.c				\
 			colors/color_blend_over.c		\
 			colors/color_blend_add.c		\
 			colors/color_blend_sub.c		\
 
-SRC_HASHMAP = \
+SRC_HASHMAP := \
 			hashmap/hashmap.c				\
 
-SRC_TEST_FRAMEWORK = \
+SRC_TEST_FRAMEWORK := \
 			test_framework/test_framework.c	\
 			test_framework/test_init.c		\
 			test_framework/test_end.c		\
 			test_framework/assertion_fail.c	\
 
-
-SRC = 	$(SRC_CONVERT) $(SRC_INPUT) $(SRC_LISTS) \
-		$(SRC_MATH) $(SRC_MEMORY) $(SRC_PRINT) \
-		$(SRC_STRINGS) $(SRC_COLORS) $(SRC_HASHMAP) \
+SOURCES := 	$(SRC_CONVERT) $(SRC_INPUT) $(SRC_LISTS)	\
+		$(SRC_MATH) $(SRC_MEMORY) $(SRC_PRINT)			\
+		$(SRC_STRINGS) $(SRC_COLORS) $(SRC_HASHMAP)		\
 		$(SRC_TEST_FRAMEWORK)
 
-SRC := $(addprefix $(SRC_FOLDER), $(SRC))
+OBJECTS := $(SOURCES:.c=.o)
+# OBJECTS := $(subst /,__,$(OBJECTS))
 
-OBJ = $(SRC:.c=.o)
+OBJECTS := $(addprefix $(OBJECTS_FOLDER), $(OBJECTS))
+SOURCES := $(addprefix $(SOURCES_FOLDER), $(SOURCES))
 
 
 # Colors
-NO_COLOR     = \x1b[0m
-OK_COLOR     = \x1b[32;01m
-ERROR_COLOR  = \x1b[31;01m
-WARN_COLOR   = \x1b[33;01m
-SILENT_COLOR = \x1b[30;01m
+NO_COLOR     := \x1b[0m
+OK_COLOR     := \x1b[32;01m
+ERROR_COLOR  := \x1b[31;01m
+WARN_COLOR   := \x1b[33;01m
+SILENT_COLOR := \x1b[30;01m
 
 
 # Basic Rules
-.PHONY: all re clean fclean nomemory
+.PHONY: all re clean fclean
 
 all: $(NAME)
 
-%.o: %.c
-	@$(CC) -c $< -I$(INCLUDEFOLDERS) $(CFLAGS) $(LDFLAGS) -o $@
+obj/%.o: %.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) $(INCLUDEFOLDERS) -c $(subst __,/,$<) -o $@
 	@printf "$(OK_COLOR)✓ $(NO_COLOR)"
 	@echo $<
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJECTS)
 	@printf "$(SILENT_COLOR)Compiling $(NAME)...$(NO_COLOR)"
-	@$(AR) rcs $(NAME).a $(OBJ)
+	@ar rcs $(NAME).a $(OBJECTS)
 	@printf " $(OK_COLOR)Done ✓$(NO_COLOR)\n"
 
 tests: $(NAME)
-	@make --no-print-directory -C tests re
+	@make --no-print-directory -C tests -B
 
 clean:
-	@rm -f $(OBJ)
-	@printf "$(SILENT_COLOR)$(NAME) : Removed Objects$(NO_COLOR)\n"
+	@rm -rf $(OBJECTS_FOLDER)
+	@printf "$(SILENT_COLOR)$(NAME) : Removed objects$(NO_COLOR)\n"
 
 fclean: clean
 	@rm -f $(NAME).a
-	@printf "$(SILENT_COLOR)$(NAME) : Removed Library$(NO_COLOR)\n"
+	@printf "$(SILENT_COLOR)$(NAME) : Removed library$(NO_COLOR)\n"
+	@make -C tests fclean
 
 re: fclean all
 
@@ -190,4 +194,3 @@ re: fclean all
 usemath:
 	@printf "$(WARN_COLOR)Compiling LibFt using Math.h$(NO_COLOR)\n"
 	$(eval LDFLAGS := "-D USE_MATH=1")
-
