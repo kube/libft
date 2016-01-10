@@ -16,10 +16,5 @@
 
 void		ft_putunbr(unsigned int n)
 {
-	char	a;
-
-	if (n / 10)
-		ft_putunbr(n / 10);
-	a = '0' + n % 10;
-	write(1, &a, 1);
+	ft_putunbr_fd(n, 1);
 }

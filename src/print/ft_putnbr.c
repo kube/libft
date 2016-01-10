@@ -16,12 +16,5 @@
 
 void		ft_putnbr(int n)
 {
-	char	a;
-
-	if (n < 0)
-		write(1, "-", 1);
-	if (n / 10)
-		ft_putnbr(ft_abs(n / 10));
-	a = '0' + ft_abs(n % 10);
-	write(1, &a, 1);
+	ft_putnbr_fd(n, 1);
 }

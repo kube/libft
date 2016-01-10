@@ -11,15 +11,9 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <ft_print.h>
 
 void	ft_putstr(char const *s)
 {
-	if (s)
-	{
-		while (*s)
-		{
-			write(1, s, 1);
-			s++;
-		}
-	}
+	ft_putstr_fd(s, 1);
 }
