@@ -43,10 +43,11 @@ void			ft_test_describe(const char *name, void (f)())
 	close_describe();
 }
 
-void			ft_test_it(const char *name)
+void			ft_test_it(const char *name, void (^f)())
 {
 	close_it();
 	testing_state.it = name;
+	f();
 }
 
 void			ft_test_module(const char *name, void (f)())

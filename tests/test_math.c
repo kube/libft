@@ -37,49 +37,55 @@ static void		describe_trigonometry()
 {
 	const float	max_delta = 0.002;
 
-	ft_test_it("has precise enough cos");
+	ft_test_it("has precise enough cos", ^{
 		expect_almost_equal(ft_cos(FT_PI / 2), 0.0, max_delta);
 		expect_almost_equal(ft_cos(FT_PI), -1.0, max_delta);
 		expect_almost_equal(ft_cos(FT_PI * 4), 1.0, max_delta);
+	});
 
-	ft_test_it("has precise enough sin");
+	ft_test_it("has precise enough sin",  ^{
 		expect_almost_equal(ft_sin(0.0), 0.0, max_delta);
 		expect_almost_equal(ft_sin(FT_PI / 6), 0.5, max_delta);
 		expect_almost_equal(ft_sin(FT_PI * 13 / 6), 0.5, max_delta);
 		expect_almost_equal(ft_sin(FT_PI), 0.0, max_delta);
 		expect_almost_equal(ft_sin(FT_PI * 4), 0.0, max_delta);
 		expect_almost_equal(ft_sin(2 * FT_PI / 3), 0.86602540378, max_delta);
+	});
 }
 
 static void		describe_square_roots()
 {
 	const float	max_delta = 0.00001;
 
-	ft_test_it("has precise enough inv_sqrt");
+	ft_test_it("has precise enough inv_sqrt", ^{
 		expect_almost_equal(ft_invsqrt(2), 0.70710678118, max_delta);
 		expect_almost_equal(ft_invsqrt(4), 0.5, max_delta);
+	});
 
-	ft_test_it("has precise enough sqrt");
+	ft_test_it("has precise enough sqrt", ^{
 		expect_almost_equal(ft_sqrt(2), 1.41421356237, max_delta);
 		expect_almost_equal(ft_sqrt(4), 2.0, max_delta);
+	});
 }
 
 static void		describe_fmod()
 {
 	const float	max_delta = 0.00001;
 
-	ft_test_it("works with positive numbers with no decimal value");
+	ft_test_it("works with positive numbers with no decimal value", ^{
 		expect_almost_equal(ft_fmod(3.0, 2.0), 1.0, max_delta);
 		expect_almost_equal(ft_fmod(13.0, 7.0), 6.0, max_delta);
 		expect_almost_equal(ft_fmod(13.0, 1.0), 0.0, max_delta);
 		expect_almost_equal(ft_fmod(256.0, 16.0), 0.0, max_delta);
 		expect_almost_equal(ft_fmod(257.0, 16.0), 1.0, max_delta);
+	});
 
-	ft_test_it("works with positive decimal numbers");
+	ft_test_it("works with positive decimal numbers", ^{
 		expect_almost_equal(ft_fmod(2.0, 0.5), 0.0, max_delta);
 		expect_almost_equal(ft_fmod(3.0, 2.5), 0.5, max_delta);
+	});
 
-	ft_test_it("works with positive numbers higher than integer");
+	ft_test_it("works with positive numbers higher than integer", ^{
 		expect_almost_equal(ft_fmod(9999999999999.0, 999999999999.0), 9.0, max_delta);
 		expect_almost_equal(ft_fmod(9999999999999.0, 99999999999.0), 99.0, max_delta);
 		expect_almost_equal(ft_fmod(9999999999999.0, 9999999999.0), 999.0, max_delta);
@@ -91,12 +97,14 @@ static void		describe_fmod()
 		expect_almost_equal(ft_fmod(9999999999999.0, 2.0), 1.0, max_delta);
 		expect_almost_equal(ft_fmod(9999999999999.0, 2.5), 1.5, max_delta);
 		expect_almost_equal(ft_fmod(9999999999999.0, 2.5), 1.5, max_delta);
+	});
 
-	ft_test_it("works with negative numbers higher than integer");
+	ft_test_it("works with negative numbers higher than integer", ^{
 		expect_almost_equal(ft_fmod(9999999999999.0, -999999999999.0), 9.0, max_delta);
 		expect_almost_equal(ft_fmod(-9999999999999.0, 999999999999.0), -9.0, max_delta);
 		expect_almost_equal(ft_fmod(-9999999999999.0, -999999999999.0), -9.0, max_delta);
 		expect_almost_equal(ft_fmod(-9999999999999.0, 1.0), 0.0, max_delta);
+	});
 }
 
 void			test_math()

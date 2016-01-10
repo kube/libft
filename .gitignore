@@ -2,3 +2,4 @@
 *.a
 *_tests
 obj/
+a.out

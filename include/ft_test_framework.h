@@ -42,7 +42,7 @@ struct s_test_state	testing_state;
 void				ft_test_init();
 void				ft_test_module(const char *name, void (f)());
 void				ft_test_describe(const char *name, void (f)());
-void				ft_test_it(const char *name);
+void				ft_test_it(const char *name, void(^f)());
 void				ft_test_assertion_fail();
 void				ft_test_end();
 
