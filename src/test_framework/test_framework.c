@@ -36,7 +36,7 @@ static void		close_describe(void)
 	testing_state.current_describe_errors_count = 0;
 }
 
-void			ft_test_describe(const char *name, void (f)())
+void			ft_test_describe(const char *name, void (^f)())
 {
 	printf("\n%sDescribe %s%s\n", TST_SLT, TST_NRM, name);
 	f();
@@ -50,7 +50,7 @@ void			ft_test_it(const char *name, void (^f)())
 	f();
 }
 
-void			ft_test_module(const char *name, void (f)())
+void			ft_test_module(const char *name, void (^f)())
 {
 	printf("%s:: Module%s %s :\n", TST_GRN, TST_NRM, name);
 	f();

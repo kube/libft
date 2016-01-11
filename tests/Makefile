@@ -13,7 +13,7 @@
 NAME := libft_tests
 INCLUDEFOLDERS := ../include/
 
-CFLAGS := -Wall -Werror -Wextra -O3
+CFLAGS := -Wall -Werror -Wextra
 LDFLAGS := -L.. -lft
 
 OBJECTS_FOLDER := obj/
@@ -21,7 +21,7 @@ OBJECTS_FOLDER := obj/
 SOURCES := 	test_infin_number.c		\
 			test_math.c				\
 			test_strings.c			\
-			tests.c					\
+			main.c					\
 
 OBJECTS := $(addprefix $(OBJECTS_FOLDER), $(SOURCES:.c=.o))
 

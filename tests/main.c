@@ -13,11 +13,12 @@
 #include <ft_test_framework.h>
 #include "tests.h"
 
-int			main()
+int main()
 {
-	ft_test_module("infin_number", test_infin_number);
-	ft_test_module("math", test_math);
-	ft_test_module("strings", test_strings);
+	TEST_MODULE(math);
+	TEST_MODULE(infin_number);
+	TEST_MODULE(strings);
+
 	ft_test_end();
-	return (0);
+	return 0;
 }

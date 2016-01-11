@@ -23,6 +23,16 @@
 # define TST_WHT	"\x1B[37m"
 # define TST_SLT	"\x1B[30;01m"
 
+#define MODULE(name, body) void module_ ## name () { \
+	ft_test_module(#name, body); \
+}
+
+#define DESCRIBE(name, body) ft_test_describe(name, body)
+
+#define TEST_MODULE(name) \
+	void module_ ## name(); \
+	module_ ## name();
+
 struct				s_test_state
 {
 	const char		*describe;
@@ -40,8 +50,8 @@ struct				s_test_state
 struct s_test_state	testing_state;
 
 void				ft_test_init();
-void				ft_test_module(const char *name, void (f)());
-void				ft_test_describe(const char *name, void (f)());
+void				ft_test_module(const char *name, void (^f)());
+void				ft_test_describe(const char *name, void (^f)());
 void				ft_test_it(const char *name, void(^f)());
 void				ft_test_assertion_fail();
 void				ft_test_end();
