@@ -138,6 +138,7 @@ SRC_TEST_FRAMEWORK := \
 			test_framework/test_init.c		\
 			test_framework/test_end.c		\
 			test_framework/assertion_fail.c	\
+			test_framework/assert.c			\
 
 SOURCES := 	$(SRC_CONVERT) $(SRC_INPUT) $(SRC_LISTS)	\
 		$(SRC_MATH) $(SRC_MEMORY) $(SRC_PRINT)			\

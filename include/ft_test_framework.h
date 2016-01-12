@@ -53,6 +53,7 @@ void				ft_test_init();
 void				ft_test_module(const char *name, void (^f)());
 void				ft_test_describe(const char *name, void (^f)());
 void				ft_test_it(const char *name, void(^f)());
+void				ft_assert(int assertion);
 void				ft_test_assertion_fail();
 void				ft_test_end();
 
