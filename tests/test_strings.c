@@ -1,20 +1,19 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   test_strings.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/14 17:48:10 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/03/14 18:47:56 by cfeijoo          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
+      /*#######.
+     ########",#:
+   #########',##".
+  ##'##'## .##',##.
+   ## ## ## # ##",#.
+    ## ## ## ## ##'
+     ## ## ## :##
+      ## ## ##*/
 
 #include <ft_test_framework.h>
 #include <ft_strings.h>
 #include <stdio.h>
 
-static void		expect_equal(const int lhs, const int rhs)
+static void
+expect_equal(const int lhs, const int rhs)
 {
 	if (lhs != rhs)
 		ft_test_assertion_fail();

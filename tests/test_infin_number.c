@@ -1,6 +1,16 @@
+
+      /*#######.
+     ########",#:
+   #########',##".
+  ##'##'## .##',##.
+   ## ## ## # ##",#.
+    ## ## ## ## ##'
+     ## ## ## :##
+      ## ## ##*/
+
+#include <ft_test_framework.h>
 #include <ft_math.h>
 #include <ft_print.h>
-#include <ft_test_framework.h>
 
 static void
 assert_eq_result(const t_infin_number *a, const t_infin_number *b, int result)
@@ -72,7 +82,6 @@ assert_add_result(const char *_a, const char *_b, const char *_result)
 	t_infin_number* d = infin_add(b, a);
 	assert_eq_result(d, result, 1);
 }
-
 
 static void
 assert_sub_result(const char *_a, const char *_b, const char *_result)
@@ -230,7 +239,7 @@ MODULE(infin_number, ^{
 
 
 	DESCRIBE("infin_sub", ^{
-		
+
 		ft_test_it("works with two positive numbers", ^{
 			assert_sub_result("1", "9999999999", "-9999999998");
 		});
@@ -257,7 +266,7 @@ MODULE(infin_number, ^{
 		ft_test_it("works with two zeros", ^{
 			assert_sub_result("0", "-0", "0");
 			assert_sub_result("-0", "-0", "0");
-			assert_sub_result("-0", "0", "0");	
+			assert_sub_result("-0", "0", "0");
 		});
 	});
 
@@ -287,4 +296,5 @@ MODULE(infin_number, ^{
 			assert_length_result(load_infin_number("0"), 0);
 		});
 	});
+
 });
