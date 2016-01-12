@@ -28,4 +28,6 @@ typedef struct				s_hashmap
 	t_hashmap_var			**vars;
 }							t_hashmap;
 
+t_hashmap					*hashmap_new(size_t size);
+
 #endif

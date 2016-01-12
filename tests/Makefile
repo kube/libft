@@ -19,6 +19,7 @@ OBJECTS_FOLDER := obj/
 SOURCES := 	test_infin_number.c		\
 			test_math.c				\
 			test_strings.c			\
+			test_hashmap.c			\
 			main.c					\
 
 OBJECTS := $(addprefix $(OBJECTS_FOLDER), $(SOURCES:.c=.o))
