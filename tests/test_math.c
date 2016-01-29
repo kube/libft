@@ -24,7 +24,7 @@ SUITE(math, {
 	/*
 	**	Adjust the max_delta variable for expected precision
 	**	LIMITED_DEV_COS_SIN in <ft_math.h> defines the precision
-	**/
+	*/
 
 	DESCRIBE("trigonometry", {
 		const float	max_delta = 0.002;
