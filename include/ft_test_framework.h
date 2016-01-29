@@ -1,60 +1,158 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_test_framework.h                                :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: cfeijoo <cfeijoo@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/02/17 19:39:24 by cfeijoo           #+#    #+#             */
-/*   Updated: 2015/03/14 20:48:58 by cfeijoo          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
+      /*#######.
+     ########",#:
+   #########',##".
+  ##'##'## .##',##.
+   ## ## ## # ##",#.
+    ## ## ## ## ##'
+     ## ## ## :##
+      ## ## ##*/
 
 #ifndef FT_TEST_FRAMEWORK_H
 # define FT_TEST_FRAMEWORK_H
 
-# define TST_NRM	"\x1B[0m"
-# define TST_RED	"\x1B[31m"
-# define TST_GRN	"\x1B[32m"
-# define TST_YEL	"\x1B[33m"
-# define TST_BLU	"\x1B[34m"
-# define TST_MAG	"\x1B[35m"
-# define TST_CYN	"\x1B[36m"
-# define TST_WHT	"\x1B[37m"
-# define TST_SLT	"\x1B[30;01m"
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <sys/types.h>
+# include <sys/wait.h>
+# include <signal.h>
 
-#define MODULE(name, body) void module_ ## name () { \
-	ft_test_module(#name, body); \
-}
+# define COLOR_NORMAL	"\x1B[0m"
+# define COLOR_RED		"\x1B[31m"
+# define COLOR_GREEN	"\x1B[32m"
+# define COLOR_YELLOW	"\x1B[33m"
+# define COLOR_BLUE		"\x1B[34m"
+# define COLOR_MAGENTA	"\x1B[35m"
+# define COLOR_CYAN		"\x1B[36m"
+# define COLOR_WHITE	"\x1B[37m"
+# define COLOR_SLATE	"\x1B[30;01m"
 
-#define DESCRIBE(name, body) ft_test_describe(name, body)
 
-#define TEST_MODULE(name) \
-	void module_ ## name(); \
-	module_ ## name();
-
-struct				s_test_state
+struct
 {
 	const char		*describe;
 	const char		*it;
 
-	unsigned int	describe_count;
-	unsigned int	it_count;
-	unsigned int	current_describe_it_count;
-
-	unsigned int	errors_count;
-	unsigned int	current_describe_errors_count;
 	unsigned int	current_it_errors_count;
-};
+	unsigned int	failed_it_count;
 
-struct s_test_state	testing_state;
+}					_testing_state;
 
-void				ft_test_init();
-void				ft_test_module(const char *name, void (^f)());
-void				ft_test_describe(const char *name, void (^f)());
-void				ft_test_it(const char *name, void(^f)());
-void				ft_assert(int assertion);
-void				ft_test_assertion_fail();
-void				ft_test_end();
+
+# define SUITE(name, block)													\
+	void _test_suite_ ## name ()											\
+	block																	\
+
+
+# define TEST_SUITE(name) 													\
+	void _test_suite_ ## name(); 											\
+	printf("%sSuite%s %s:\n", COLOR_GREEN, COLOR_NORMAL, #name); 		\
+	_test_suite_ ## name(); 												\
+	printf("\n");															\
+
+
+
+# define _PRINT_IT_RESULT(result, color)									\
+	printf(" %s[%s]%s\n", COLOR_ ## color, result, COLOR_NORMAL);			\
+
+
+# define IT(name, block)													\
+{																			\
+	pid_t	child_process;													\
+	int		is_child_process;												\
+	int		child_status;													\
+																			\
+	/* Print current name and flush to prevent re-print in child */			\
+	printf("  %sIt %s%s",													\
+		COLOR_SLATE, COLOR_NORMAL,											\
+		name);																\
+	fflush(stdout);															\
+																			\
+	child_process = fork();													\
+	is_child_process = !child_process;										\
+																			\
+	/* Child process */														\
+	if (is_child_process)													\
+	{																		\
+		block																\
+		exit(_testing_state.current_it_errors_count);						\
+	}																		\
+	/* Parent process */													\
+	else																	\
+	{																		\
+		/* Wait child to return */											\
+		waitpid(child_process, &child_status, 0);							\
+																			\
+		/* Child exited */													\
+		if (WIFEXITED(child_status))										\
+		{																	\
+			switch (WEXITSTATUS(child_status))								\
+			{																\
+				case 0:														\
+					_PRINT_IT_RESULT("OK", GREEN)							\
+					break;													\
+				default:													\
+					_PRINT_IT_RESULT("FAIL", RED)							\
+			}																\
+		}																	\
+		/* Child was killed by signal */									\
+		else if (WIFSIGNALED(child_status))									\
+		{																	\
+			switch (WTERMSIG(child_status))									\
+			{																\
+				case SIGSEGV:												\
+					_PRINT_IT_RESULT("SIGSEV", RED)							\
+					break;													\
+			}																\
+		}																	\
+	}																		\
+	_testing_state.it = NULL;												\
+}																			\
+
+
+
+# define DESCRIBE(name, block)												\
+	printf("\n %sDescribe %s%s\n", COLOR_SLATE, COLOR_NORMAL, name);			\
+	block																	\
+	_testing_state.describe = NULL;											\
+
+
+# define ASSERTION_FAIL()													\
+	_testing_state.current_it_errors_count++;								\
+
+
+# define ASSERT(assertion)													\
+	if (!(assertion))														\
+	{																		\
+		printf("     %sExpected %s%s\n",									\
+			COLOR_RED, #assertion, COLOR_NORMAL);							\
+		ASSERTION_FAIL()													\
+	}																		\
+
+
+
+# define TEST_INIT()														\
+	_testing_state.describe = NULL;											\
+	_testing_state.it = NULL;												\
+																			\
+	_testing_state.failed_it_count = 0;										\
+	_testing_state.current_it_errors_count = 0;								\
+
+
+# define TEST_END()															\
+	if (_testing_state.failed_it_count)										\
+		printf("%s%d %s%s\n\n", COLOR_RED,									\
+			_testing_state.failed_it_count,									\
+			_testing_state.failed_it_count == 1 ? "error" : "errors",		\
+			COLOR_NORMAL);													\
+	else																	\
+		printf("%sSuccess!%s\n\n", COLOR_GREEN, COLOR_NORMAL);				\
+
+
+
+# define EXPECT_SIGNAL(signal, block)										\
+	if (1 == 1)																\
+	block																	\
 
 #endif

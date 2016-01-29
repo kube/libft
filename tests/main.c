@@ -12,11 +12,13 @@
 
 int main()
 {
-	TEST_MODULE(math);
-	TEST_MODULE(infin_number);
-	TEST_MODULE(strings);
-	TEST_MODULE(hashmap);
+	TEST_INIT();
 
-	ft_test_end();
+	TEST_SUITE(strings);
+	TEST_SUITE(math);
+	TEST_SUITE(hashmap);
+	TEST_SUITE(infin_number);
+
+	TEST_END();
 	return 0;
 }

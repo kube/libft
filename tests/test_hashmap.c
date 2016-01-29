@@ -8,23 +8,50 @@
      ## ## ## :##
       ## ## ##*/
 
-#include <ft_test_framework.h>
-#include <ft_hashmap.h>
+///CUTRUN:INCLUDE_FOLDER	../include
+///CUTRUN:LIBRARY_FOLDER	../
+///CUTRUN:LINK_LIBRARY		ft
 
-MODULE(hashmap, ^{
-	
-	DESCRIBE("hashmap_new", ^{
-		
-		ft_test_it("returns an initialized hashmap", ^{
-			t_hashmap	*hashmap;
-			
-			hashmap = hashmap_new(512);
-			ft_assert(hashmap->size == 512);
-			ft_assert(hashmap->vars[0] == 0);
-			ft_assert(hashmap->vars[511] == 0);
-			ft_assert(hashmap->vars[42] == 0);
-		});
-		
-	});
-	
-});
+#include "cut_framework.h"
+#include "ft_hashmap.h"
+
+SUITE(hashmap, {
+
+	DESCRIBE("hashmap_new", {
+
+		DESCRIBE("_new", {
+
+			IT("returns an initialized hashmap", {
+				t_hashmap	*hashmap;
+
+				hashmap = hashmap_new(512);
+				ASSERT(hashmap->size == 512)
+
+				ASSERT(hashmap->vars[0] != NULL)
+				ASSERT(hashmap->vars[511] == NULL)
+				ASSERT(hashmap->vars[42] != NULL)
+
+				// EXPECT_SIGNAL(SIGSEGV, {
+					puts((void *)((unsigned long long) - 1));
+				// })
+			})
+
+			IT("returns another initialized hashmap", {
+				t_hashmap	*hashmap;
+
+				hashmap = hashmap_new(512);
+				ASSERT(hashmap->size == 512)
+
+				ASSERT(hashmap->vars[0] == NULL)
+				ASSERT(hashmap->vars[511] == NULL)
+				ASSERT(hashmap->vars[42] == NULL)
+
+				EXPECT_SIGNAL(SIGSEGV, {
+					// puts((void *)((unsigned long long) - 1));
+				})
+			})
+		})
+
+	})
+
+})

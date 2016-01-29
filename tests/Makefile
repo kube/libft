@@ -16,10 +16,11 @@ LDFLAGS := -L.. -lft
 
 OBJECTS_FOLDER := obj/
 
-SOURCES := 	test_infin_number.c		\
+SOURCES := \
 			test_math.c				\
 			test_strings.c			\
 			test_hashmap.c			\
+			test_infin_number.c		\
 			main.c					\
 
 OBJECTS := $(addprefix $(OBJECTS_FOLDER), $(SOURCES:.c=.o))

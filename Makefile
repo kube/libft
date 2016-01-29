@@ -133,17 +133,9 @@ SRC_COLORS := \
 SRC_HASHMAP := \
 			hashmap/hashmap.c				\
 
-SRC_TEST_FRAMEWORK := \
-			test_framework/test_framework.c	\
-			test_framework/test_init.c		\
-			test_framework/test_end.c		\
-			test_framework/assertion_fail.c	\
-			test_framework/assert.c			\
-
 SOURCES := 	$(SRC_CONVERT) $(SRC_INPUT) $(SRC_LISTS)	\
 		$(SRC_MATH) $(SRC_MEMORY) $(SRC_PRINT)			\
 		$(SRC_STRINGS) $(SRC_COLORS) $(SRC_HASHMAP)		\
-		$(SRC_TEST_FRAMEWORK)
 
 OBJECTS := $(SOURCES:.c=.o)
 # OBJECTS := $(subst /,__,$(OBJECTS))
